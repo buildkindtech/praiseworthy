@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@/app/globals.css";
 import { notFound } from "next/navigation";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
@@ -99,6 +100,13 @@ export default async function LocaleLayout({
   return (
     <html lang={meta.languageTag} className="scroll-smooth">
       <body className="font-sans antialiased">
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a34480981870ee2fd694134"
+          data-source="WEB_USER"
+          strategy="afterInteractive"
+        />
         <LanguageProvider initialLocale={locale}>
           <script
             type="application/ld+json"

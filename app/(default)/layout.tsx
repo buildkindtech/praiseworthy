@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@/app/globals.css";
 import { localeMeta } from "@/lib/seo-i18n";
 import {
@@ -34,6 +35,13 @@ export default function DefaultRootLayout({
   return (
     <html lang={localeMeta.en.languageTag} className="scroll-smooth">
       <body className="font-sans antialiased">
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a34480981870ee2fd694134"
+          data-source="WEB_USER"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
