@@ -21,7 +21,7 @@ export const localeMeta: Record<
     languageTag: "en-US",
     title: "Free Roof Inspection North Richland Hills | Praise Worthy",
     description:
-      "Free roof inspections, storm damage photos, and honest guidance for homeowners in North Richland Hills, Fort Worth, and DFW.",
+      "Free roof inspections, storm damage photos, and honest guidance for homeowners in North Richland Hills, Fort Worth, and DFW. Book your free inspection today.",
     keywords: [
       "roof inspection North Richland Hills",
       "storm damage roof repair DFW",
@@ -57,7 +57,7 @@ export const localeMeta: Record<
     title:
       "Inspeccion gratis de techo en North Richland Hills | Danos por granizo y tormenta",
     description:
-      "Cree que el granizo o el viento dano su techo? Praise Worthy ofrece inspecciones gratis, fotos del dano y orientacion clara para propietarios en North Richland Hills y DFW.",
+      "Inspecciones de techo gratis, fotos del dano y orientacion clara para propietarios en North Richland Hills y DFW. Agende hoy su inspeccion gratis.",
     keywords: [
       "inspección de techo North Richland Hills",
       "daño por tormenta techo DFW",
@@ -92,7 +92,7 @@ export const localeMeta: Record<
     languageTag: "zh-CN",
     title: "North Richland Hills 免费屋顶检查 | 冰雹与风暴损伤快速确认",
     description:
-      "担心冰雹或大风损伤了屋顶？Praise Worthy 为 North Richland Hills 和 DFW 业主提供免费检查、损伤照片和清晰的下一步建议。",
+      "担心冰雹或大风损伤了屋顶？Praise Worthy 为 North Richland Hills 和 DFW 业主提供免费屋顶检查与损伤照片。立即预约免费检查。",
     keywords: [
       "North Richland Hills 屋顶检查",
       "DFW 风暴屋顶损伤",
@@ -128,7 +128,7 @@ export const localeMeta: Record<
     title:
       "North Richland Hills 무료 지붕 점검 | 우박 및 폭풍 피해 빠른 확인",
     description:
-      "우박이나 강풍으로 지붕이 손상됐을까 걱정되시나요? Praise Worthy는 North Richland Hills와 DFW 지역에서 무료 점검, 손상 사진, 명확한 다음 단계 안내를 제공합니다.",
+      "우박이나 강풍으로 지붕이 손상됐을까 걱정되시나요? Praise Worthy가 North Richland Hills와 DFW에서 무료 지붕 점검과 손상 사진을 제공합니다. 지금 바로 무료 점검을 예약하세요.",
     keywords: [
       "North Richland Hills 지붕 점검",
       "DFW 폭풍 지붕 피해",

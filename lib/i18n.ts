@@ -52,10 +52,10 @@ export const translations = {
     },
     hero: {
       badge: "Serving North Richland Hills & DFW",
-      titleLine1: "Think Your Roof Took a Hit",
-      titleHighlight: "After the Last Storm?",
+      titleLine1: "Free Roof Inspection in North Richland Hills & DFW",
+      titleHighlight: "Think Your Roof Took a Storm Hit?",
       description:
-        "Praise Worthy provides free roof inspections across DFW to catch storm and hail damage early, before a small problem turns into an expensive repair.",
+        "Praise Worthy provides free roof inspections across North Richland Hills and the DFW area to catch storm and hail damage early, before a small problem turns into an expensive repair.",
       trustSignals: ["Free Roof Inspection", "DFW Local Roofing Team", "Storm Damage Specialists"],
       slides: [
         { title: "Storm damage can hide in plain sight", desc: "What looks fine from the driveway can still mean cracked shingles, lifted edges, and hidden leaks." },
@@ -142,6 +142,8 @@ export const translations = {
         ["How soon can you come for an inspection?", "We typically schedule inspections within 24-48 hours. During active storm season, we prioritize homeowners who suspect damage."],
         ["What happens if you find damage during the inspection?", "We'll give you a clear report with photos, walk you through the findings, and explain your options without pressure."],
         ["Do you offer warranties on your work?", "Yes. We stand behind our work with warranty coverage, and we'll explain the details clearly during the inspection process."],
+        ["How often should I have my roof inspected in North Texas?", "At least once a year, and after any major hail or wind storm. North Texas weather is tough on roofs, so regular inspections in North Richland Hills and DFW catch small problems before they become expensive repairs."],
+        ["Do I need to be home during the roof inspection?", "No. Most of the inspection happens on the roof and around the exterior, so many homeowners schedule it while they're at work. We'll share the full report and photos with you afterward."],
       ],
     },
     finalCta: {
@@ -179,8 +181,8 @@ export const translations = {
     },
     hero: {
       badge: "Atendemos North Richland Hills y todo DFW",
-      titleLine1: "Tu techo pudo sufrir daños",
-      titleHighlight: "por granizo o tormenta",
+      titleLine1: "Inspección gratis de techo en North Richland Hills y DFW",
+      titleHighlight: "¿Tu techo sufrió daños por granizo o tormenta?",
       description: "En Praise Worthy ayudamos a propietarios en DFW con inspecciones de techo completamente gratis para detectar daños ocultos antes de que se conviertan en reparaciones costosas.",
       trustSignals: ["Inspección gratis", "Contratista local de DFW", "Especialistas en daños por tormenta"],
       slides: [
@@ -249,6 +251,8 @@ export const translations = {
       ["Que tan pronto pueden venir?", "Normalmente programamos inspecciones en 24 a 48 horas. En temporada de tormentas damos prioridad a los casos urgentes."],
       ["Que pasa si encuentran dano?", "Te mostramos fotos, te explicamos lo que encontramos y te orientamos sobre los siguientes pasos sin presion."],
       ["Ofrecen garantia por su trabajo?", "Si. Respaldamos nuestro trabajo y te explicamos la cobertura con claridad durante el proceso."],
+      ["Cada cuanto debo inspeccionar mi techo en el norte de Texas?", "Al menos una vez al ano y despues de cada tormenta fuerte de granizo o viento. El clima del norte de Texas castiga los techos, asi que una revision regular en North Richland Hills y DFW detecta problemas pequenos antes de que se vuelvan costosos."],
+      ["Necesito estar en casa durante la inspeccion?", "No. La mayor parte de la inspeccion se hace sobre el techo y en el exterior, asi que muchos propietarios la agendan mientras estan en el trabajo. Despues te compartimos el reporte completo con fotos."],
     ] },
     finalCta: { titleLine1: "¿No estás seguro si tu techo", titleHighlight: "quedó dañado?", description: "Una inspección a tiempo puede ahorrarte miles en reparaciones futuras. Revísalo ahora, antes de que un problema pequeño se haga grande.", bullets: ["Inspección 100% gratis", "Sin compromiso", "Citas en 24-48 horas"] },
     footer: { quickLinks: "Enlaces rapidos", serviceAreas: "Zonas de servicio", getStarted: "Empieza hoy", getStartedDescription: "Agenda hoy tu inspeccion gratuita. Sin compromiso y sin presion.", mapLabel: "Ver en Google Maps", hours: "Lun - Sab: 8:00 AM - 6:00 PM", privacyPolicy: "Politica de privacidad", termsOfService: "Terminos de servicio", rightsReserved: "Todos los derechos reservados." },
@@ -270,8 +274,8 @@ export const translations = {
     },
     hero: {
       badge: "服务 North Richland Hills 及整个 DFW",
-      titleLine1: "暴风雨或冰雹过后",
-      titleHighlight: "您的屋顶可能已经受损",
+      titleLine1: "North Richland Hills 与 DFW 免费屋顶检查",
+      titleHighlight: "暴风雨或冰雹过后，屋顶可能已经受损",
       description: "Praise Worthy 为 DFW 地区业主提供免费屋顶检查，帮助尽早发现看不见的损伤，避免后续更高的维修费用。",
       trustSignals: ["免费屋顶检查", "DFW 本地屋顶团队", "风暴损伤检查专家"],
       slides: [
@@ -340,6 +344,8 @@ export const translations = {
       ["最快多久可以上门检查？", "通常 24 到 48 小时内可以安排。风暴高发时期会优先处理怀疑有损伤的业主。"],
       ["如果检查发现损伤怎么办？", "我们会把发现的问题、现场照片和可行方案讲清楚，让你知道下一步该怎么做，没有强迫。"],
       ["施工有保修吗？", "有的。我们会对施工提供相应保障，并在过程中把保修范围说明清楚。"],
+      ["在北德州多久应该检查一次屋顶？", "建议每年至少检查一次，遇到较强冰雹或大风天气后也要及时检查。北德州气候对屋顶损耗较大，在 North Richland Hills 和 DFW 定期检查能在小问题变成高额维修前及时发现。"],
+      ["检查时我需要在家吗？", "不需要。检查主要在屋顶和房屋外部进行，很多业主会安排在上班时间。检查结束后我们会把完整报告和照片发给您。"],
     ] },
     finalCta: { titleLine1: "还不确定您的屋顶", titleHighlight: "有没有受损？", description: "越早检查，越有机会避免更大的维修开销。现在先确认清楚，比等到漏水或问题扩大后再处理更省心。", bullets: ["100% 免费检查", "无需承担压力", "24-48 小时可安排"] },
     footer: { quickLinks: "快捷入口", serviceAreas: "服务区域", getStarted: "立即开始", getStartedDescription: "现在预约免费屋顶检查，不强推，不施压。", mapLabel: "在 Google 地图查看", hours: "周一至周六: 8:00 AM - 6:00 PM", privacyPolicy: "隐私政策", termsOfService: "服务条款", rightsReserved: "版权所有。" },
@@ -361,8 +367,8 @@ export const translations = {
     },
     hero: {
       badge: "North Richland Hills 및 DFW 전역 서비스",
-      titleLine1: "폭풍이나 우박 이후",
-      titleHighlight: "지붕 손상이 걱정되시나요?",
+      titleLine1: "North Richland Hills · DFW 무료 지붕 점검",
+      titleHighlight: "폭풍이나 우박 이후, 지붕 손상이 걱정되시나요?",
       description: "Praise Worthy는 DFW 지역 주택 소유주를 위해 무료 지붕 점검을 제공하며, 눈에 잘 보이지 않는 손상까지 꼼꼼하게 확인해드립니다.",
       trustSignals: ["무료 지붕 점검", "DFW 지역 로컬 업체", "폭풍 피해 점검 전문"],
       slides: [
@@ -431,6 +437,8 @@ export const translations = {
       ["얼마나 빨리 방문 가능한가요?", "보통 24-48시간 내 일정 조율이 가능합니다. 폭풍 직후에는 긴급 점검을 우선 배정합니다."],
       ["손상이 발견되면 그다음은 어떻게 되나요?", "사진과 함께 점검 결과를 설명드리고, 가능한 선택지를 부담 없이 안내해 드립니다."],
       ["시공 보증도 있나요?", "네. 작업에 대한 보증을 제공하며, 보증 범위도 과정 중 명확히 설명해 드립니다."],
+      ["북텍사스에서는 지붕 점검을 얼마나 자주 받아야 하나요?", "최소 1년에 한 번, 그리고 강한 우박이나 강풍이 지나간 후에는 꼭 점검하는 것이 좋습니다. 북텍사스 날씨는 지붕에 부담이 크기 때문에 North Richland Hills와 DFW 지역에서는 정기 점검으로 작은 문제를 조기에 발견하는 것이 유리합니다."],
+      ["점검 시 집에 꼭 있어야 하나요?", "아니요. 점검은 대부분 지붕 위와 외부에서 진행되므로 출근 시간에 예약하시는 분들도 많습니다. 점검 후 사진과 함께 전체 보고서를 보내드립니다."],
     ] },
     finalCta: { titleLine1: "지붕이 손상됐는지", titleHighlight: "아직 확실하지 않으신가요?", description: "지금 점검해두면 나중에 더 큰 수리비를 막을 수 있습니다. 작은 문제일 때 확인하는 것이 가장 현명합니다.", bullets: ["100% 무료 점검", "부담 없음", "24-48시간 내 예약 가능"] },
     footer: { quickLinks: "바로가기", serviceAreas: "서비스 지역", getStarted: "지금 시작하기", getStartedDescription: "지금 무료 지붕 점검을 예약하세요. 부담 없이 상담받을 수 있습니다.", mapLabel: "Google Maps에서 보기", hours: "월 - 토: 오전 8:00 - 오후 6:00", privacyPolicy: "개인정보 처리방침", termsOfService: "이용약관", rightsReserved: "모든 권리 보유." },
