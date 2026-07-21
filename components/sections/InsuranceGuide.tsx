@@ -28,7 +28,7 @@ export default function InsuranceGuide() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
             {t.insurance.title}
           </h2>
-          <p className="text-brand-surface/78 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-brand-surface/88 text-lg max-w-2xl mx-auto leading-relaxed">
             {t.insurance.description}
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function InsuranceGuide() {
                 <h3 className="font-heading text-lg font-bold text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-brand-surface/70 text-sm leading-relaxed">
+                <p className="text-brand-surface/84 text-sm leading-relaxed">
                   {service.desc}
                 </p>
               </CardContent>

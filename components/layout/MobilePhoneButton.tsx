@@ -22,12 +22,12 @@ export default function MobilePhoneButton() {
       {locale === "zh" ? (
         <WeChatQrButton
           label="微信联系"
-          className={`h-auto w-full rounded-none bg-brand-orange py-4 text-brand-navy shadow-[0_-8px_22px_rgba(17,33,24,0.16)] hover:bg-brand-amber ${mobileCtaClass}`}
+          className={`h-auto w-full rounded-none bg-gradient-to-r from-brand-amber via-brand-orange to-brand-orange py-4 pb-[max(1rem,env(safe-area-inset-bottom))] text-brand-navy shadow-[0_-8px_22px_rgba(17,33,24,0.2)] hover:brightness-105 ${mobileCtaClass}`}
         />
       ) : (
         <a
           href={PHONE_HREF}
-          className={`flex items-center justify-center gap-2 w-full bg-brand-orange hover:bg-brand-amber text-brand-navy font-bold ${mobileCtaClass} py-4 px-4 text-center leading-tight shadow-[0_-8px_22px_rgba(17,33,24,0.16)] transition-colors`}
+          className={`flex items-center justify-center gap-2 w-full bg-gradient-to-r from-brand-amber via-brand-orange to-brand-orange hover:brightness-105 text-brand-navy font-bold ${mobileCtaClass} py-4 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] text-center leading-tight shadow-[0_-8px_22px_rgba(17,33,24,0.2)] transition-[filter]`}
         >
           <Phone className="h-5 w-5 animate-pulse" />
           {t.mobileBar.cta}

@@ -20,12 +20,12 @@ export default function Hero() {
   const slidesLength = carouselSlides.length;
   const heroHeadlineClass =
     locale === "zh"
-      ? "text-4xl sm:text-5xl md:text-[3.6rem] lg:text-[4.2rem]"
+      ? "text-[2.1rem] sm:text-5xl md:text-[3.6rem] lg:text-[4.2rem]"
       : locale === "ko"
-        ? "text-4xl sm:text-5xl md:text-[3.7rem] lg:text-[4.35rem]"
+        ? "text-[2.1rem] sm:text-5xl md:text-[3.7rem] lg:text-[4.35rem]"
         : locale === "es"
-          ? "text-4xl sm:text-5xl md:text-[3.9rem] lg:text-[4.45rem]"
-          : "text-4xl sm:text-5xl md:text-6xl lg:text-[4.7rem]";
+          ? "text-[2.1rem] sm:text-5xl md:text-[3.9rem] lg:text-[4.45rem]"
+          : "text-[2.1rem] sm:text-5xl md:text-6xl lg:text-[4.7rem]";
   const heroBodyClass =
     locale === "zh" || locale === "ko"
       ? "text-lg sm:text-xl md:text-[1.32rem]"
@@ -71,13 +71,13 @@ export default function Hero() {
             {t.hero.badge}
           </Badge>
 
-          <h1 className={`font-heading ${heroHeadlineClass} font-extrabold text-white leading-[1.04] mb-6 max-w-4xl text-balance`}>
+          <h1 className={`font-heading ${heroHeadlineClass} font-extrabold text-white leading-[1.08] md:leading-[1.04] tracking-[-0.015em] mb-6 max-w-4xl text-balance`}>
             {t.hero.titleLine1}
             <br />
             <span className="text-brand-orange">{t.hero.titleHighlight}</span>
           </h1>
 
-          <p className={`${heroBodyClass} text-brand-surface/82 mb-8 leading-relaxed max-w-2xl text-pretty`}>
+          <p className={`${heroBodyClass} text-brand-surface/92 mb-8 leading-relaxed max-w-2xl text-pretty`}>
             {t.hero.description}
           </p>
 
@@ -86,7 +86,7 @@ export default function Hero() {
             <LinkButton
               href={PHONE_HREF}
               size="lg"
-              className="rounded-full border border-brand-orange/35 bg-brand-orange hover:bg-brand-amber text-brand-navy text-lg px-8 py-7 font-bold shadow-[0_18px_36px_rgba(17,33,24,0.28)] animate-pulse-glow"
+              className="btn-gold rounded-full border border-brand-orange/40 text-brand-navy text-lg px-8 py-7 font-bold animate-pulse-glow"
             >
               <Phone className="h-5 w-5 mr-2" />
               {t.mobileBar.cta}
@@ -105,15 +105,15 @@ export default function Hero() {
 
           <nav
             aria-label="Primary roofing service links"
-            className="mb-8 flex flex-wrap gap-3 text-sm font-medium text-brand-surface/82"
+            className="mb-8 flex flex-wrap gap-2.5 text-sm font-medium"
           >
-            <a href="#free-inspection" className="underline-offset-4 hover:text-white hover:underline">
+            <a href="#free-inspection" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
               Start with a free roof inspection
             </a>
-            <a href="#service-area" className="underline-offset-4 hover:text-white hover:underline">
+            <a href="#service-area" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
               Explore DFW service areas
             </a>
-            <Link href="/guides/" className="underline-offset-4 hover:text-white hover:underline">
+            <Link href="/guides/" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
               Read roofing guides for homeowners
             </Link>
           </nav>
@@ -123,7 +123,7 @@ export default function Hero() {
             {trustSignals.map((signal) => (
               <div key={signal} className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-brand-success shrink-0" />
-                <span className="text-brand-surface/90 text-sm sm:text-base font-medium leading-snug text-pretty">
+                <span className="text-brand-surface/96 text-sm sm:text-base font-medium leading-snug text-pretty">
                   {signal}
                 </span>
               </div>
@@ -138,7 +138,7 @@ export default function Hero() {
           <div className="flex items-center gap-4">
             <button
               onClick={prevSlide}
-              className="shrink-0 p-2 rounded-full text-brand-surface/70 hover:text-brand-surface hover:bg-white/10 transition-colors"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-brand-surface/80 hover:text-brand-surface hover:bg-white/10 transition-colors"
               aria-label={t.common.previousSlide}
             >
               <ChevronLeft className="h-5 w-5" />
@@ -148,14 +148,14 @@ export default function Hero() {
               <p className="text-white font-heading font-semibold text-base sm:text-lg mb-1">
                 {carouselSlides[currentSlide].title}
               </p>
-              <p className="text-brand-surface/72 text-sm sm:text-base">
+              <p className="text-brand-surface/85 text-sm sm:text-base">
                 {carouselSlides[currentSlide].desc}
               </p>
             </div>
 
             <button
               onClick={nextSlide}
-              className="shrink-0 p-2 rounded-full text-brand-surface/70 hover:text-brand-surface hover:bg-white/10 transition-colors"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-brand-surface/80 hover:text-brand-surface hover:bg-white/10 transition-colors"
               aria-label={t.common.nextSlide}
             >
               <ChevronRight className="h-5 w-5" />
@@ -168,10 +168,10 @@ export default function Hero() {
               <button
                 key={i}
                 onClick={() => setCurrentSlide(i)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`box-content h-2.5 rounded-full bg-clip-content p-1.5 transition-all ${
                   i === currentSlide
-                    ? "bg-brand-orange w-6"
-                    : "bg-white/34 hover:bg-white/56"
+                    ? "w-7 bg-brand-orange"
+                    : "w-2.5 bg-white/40 hover:bg-white/60"
                 }`}
                 aria-label={`${t.common.goToSlide} ${i + 1}`}
               />

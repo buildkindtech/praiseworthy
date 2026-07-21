@@ -82,7 +82,7 @@ export default function Footer() {
                 className="object-contain object-left brightness-0 invert"
               />
             </div>
-            <div className="space-y-3 text-sm text-brand-surface/72">
+            <div className="space-y-3 text-sm text-brand-surface/82">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
                 <span>North Richland Hills, TX</span>
@@ -130,7 +130,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-surface/72 hover:text-brand-orange transition-colors"
+                    className="text-sm text-brand-surface/82 hover:text-brand-orange transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -149,7 +149,7 @@ export default function Footer() {
                 <li key={area}>
                   <Link
                     href={cityPagePathsByCity[area]}
-                    className="text-sm text-brand-surface/72 hover:text-brand-orange transition-colors"
+                    className="text-sm text-brand-surface/82 hover:text-brand-orange transition-colors"
                   >
                     {area}
                   </Link>
@@ -163,12 +163,12 @@ export default function Footer() {
             <h3 className="font-heading font-bold text-sm uppercase tracking-wider mb-4">
               {t.footer.getStarted}
             </h3>
-            <p className="text-sm text-brand-surface/72 mb-4">
+            <p className="text-sm text-brand-surface/82 mb-4">
               {t.footer.getStartedDescription}
             </p>
             <LinkButton
               href={PHONE_HREF}
-              className="w-full rounded-full border border-brand-orange/30 bg-brand-orange text-brand-navy hover:bg-brand-amber font-semibold"
+              className="btn-gold w-full rounded-full border border-brand-orange/40 text-brand-navy font-semibold"
             >
               <Phone className="h-4 w-4 mr-2" />
               {t.common.freeInspection}

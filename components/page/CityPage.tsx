@@ -103,7 +103,7 @@ export default function CityPage({ page }: { page: CityPageType }) {
               <h1 className="mb-6 font-heading text-4xl font-extrabold leading-[1.04] text-white sm:text-5xl md:text-6xl">
                 {page.title}
               </h1>
-              <p className="mb-8 max-w-2xl text-lg leading-relaxed text-brand-surface/84 md:text-xl">
+              <p className="mb-8 max-w-2xl text-lg leading-relaxed text-brand-surface/92 md:text-xl">
                 {page.intro}
               </p>
 
@@ -111,7 +111,7 @@ export default function CityPage({ page }: { page: CityPageType }) {
                 <LinkButton
                   href={PHONE_HREF}
                   size="lg"
-                  className="rounded-full border border-brand-orange/35 bg-brand-orange px-8 py-7 text-lg font-bold text-brand-navy shadow-[0_18px_36px_rgba(17,33,24,0.28)]"
+                  className="btn-gold rounded-full border border-brand-orange/40 px-8 py-7 text-lg font-bold text-brand-navy"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Call {BUSINESS_PHONE}
@@ -128,17 +128,17 @@ export default function CityPage({ page }: { page: CityPageType }) {
                 </LinkButton>
               </div>
 
-              <nav aria-label={`${page.city} roofing quick links`} className="flex flex-wrap gap-3 text-sm font-medium text-brand-surface/82">
-                <Link href="/#free-inspection" className="underline-offset-4 hover:text-white hover:underline">
+              <nav aria-label={`${page.city} roofing quick links`} className="flex flex-wrap gap-2.5 text-sm font-medium">
+                <Link href="/#free-inspection" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
                   See how our free inspection works
                 </Link>
-                <Link href="/#local-roofing-services" className="underline-offset-4 hover:text-white hover:underline">
+                <Link href="/#local-roofing-services" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
                   Explore storm damage and insurance help
                 </Link>
-                <Link href="/#service-area" className="underline-offset-4 hover:text-white hover:underline">
+                <Link href="/#service-area" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
                   View all DFW service areas
                 </Link>
-                <Link href="/guides/" className="underline-offset-4 hover:text-white hover:underline">
+                <Link href="/guides/" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
                   Read DFW roofing guides
                 </Link>
               </nav>
@@ -190,7 +190,7 @@ export default function CityPage({ page }: { page: CityPageType }) {
                 <p className="mb-3 text-sm uppercase tracking-[0.22em] text-brand-orange/90">
                   Nearby areas
                 </p>
-                <div className="space-y-3 text-sm text-brand-surface/82">
+                <div className="space-y-3 text-sm text-brand-surface/90">
                   {page.nearbyAreas.map((area) => (
                     <div key={area} className="flex items-center gap-2">
                       <MapPin className="h-4 w-4 text-brand-orange" />

@@ -158,7 +158,7 @@ export default function GuidePage({
               <h1 className="mb-6 font-heading text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl md:text-6xl">
                 {guide.title}
               </h1>
-              <p className="mb-8 max-w-3xl text-lg leading-8 text-brand-surface/82 md:text-xl">
+              <p className="mb-8 max-w-3xl text-lg leading-8 text-brand-surface/92 md:text-xl">
                 {guide.intro}
               </p>
 
@@ -166,7 +166,7 @@ export default function GuidePage({
                 <LinkButton
                   href={PHONE_HREF}
                   size="lg"
-                  className="rounded-full border border-brand-orange/35 bg-brand-orange px-8 py-7 text-lg font-bold text-brand-navy shadow-[0_18px_36px_rgba(17,33,24,0.28)]"
+                  className="btn-gold rounded-full border border-brand-orange/40 px-8 py-7 text-lg font-bold text-brand-navy"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   {ui.call} {BUSINESS_PHONE}
@@ -187,7 +187,7 @@ export default function GuidePage({
                 {guide.keyPoints.map((point) => (
                   <div
                     key={point}
-                    className="rounded-[24px] border border-white/10 bg-white/6 px-5 py-4 text-sm leading-6 text-brand-surface/84"
+                    className="rounded-[24px] border border-white/10 bg-white/6 px-5 py-4 text-sm leading-6 text-brand-surface/92"
                   >
                     <CheckCircle className="mb-3 h-4 w-4 text-brand-success" />
                     {point}
@@ -247,7 +247,7 @@ export default function GuidePage({
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-brand-orange">
                   {ui.summary}
                 </p>
-                <p className="leading-7 text-brand-surface/84">{guide.summary}</p>
+                <p className="leading-7 text-brand-surface/92">{guide.summary}</p>
               </section>
 
               <section className="rounded-[32px] border border-brand-navy/8 bg-brand-surface px-6 py-6 shadow-[0_18px_40px_rgba(27,54,38,0.08)]">

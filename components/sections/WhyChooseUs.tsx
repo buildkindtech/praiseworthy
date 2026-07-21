@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
               Praise Worthy
             </p>
             <h3 className="font-heading text-2xl font-bold mb-3">{t.why.description}</h3>
-            <div className="space-y-3 text-brand-surface/74 leading-relaxed">
+            <div className="space-y-3 text-brand-surface/86 leading-relaxed">
               {reasons.slice(0, 3).map((reason) => (
                 <div key={reason.title} className="flex items-start gap-3 rounded-2xl border border-white/8 bg-white/4 px-4 py-3">
                   <div className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-orange" />

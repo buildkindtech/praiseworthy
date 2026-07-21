@@ -36,13 +36,13 @@ export default function FinalCTA() {
               <span className="text-brand-orange">{t.finalCta.titleHighlight}</span>
             </h2>
 
-            <p className="text-brand-surface/76 text-lg md:text-xl mb-8 max-w-2xl lg:mx-0 mx-auto leading-relaxed text-pretty">
+            <p className="text-brand-surface/88 text-lg md:text-xl mb-8 max-w-2xl lg:mx-0 mx-auto leading-relaxed text-pretty">
               {t.finalCta.description}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 sm:gap-6 mb-8">
               {t.finalCta.bullets.map((bullet) => (
-                <div key={bullet} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/4 px-4 py-2 text-brand-surface/82 text-sm md:text-base">
+                <div key={bullet} className="flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-4 py-2 text-brand-surface/92 text-sm md:text-base">
                   <CheckCircle className="w-5 h-5 text-brand-orange" />
                   <span>{bullet}</span>
                 </div>
@@ -54,13 +54,13 @@ export default function FinalCTA() {
                 <WeChatQrButton
                   label="微信联系"
                   size="lg"
-                  className="rounded-full border border-brand-orange/35 bg-brand-orange px-10 py-7 text-lg font-bold text-brand-navy shadow-xl animate-pulse-glow hover:bg-brand-amber"
+                  className="btn-gold rounded-full border border-brand-orange/40 px-10 py-7 text-lg font-bold text-brand-navy animate-pulse-glow"
                 />
               ) : (
                 <LinkButton
                   href={PHONE_HREF}
                   size="lg"
-                  className="rounded-full border border-brand-orange/35 bg-brand-orange hover:bg-brand-amber text-brand-navy text-lg px-10 py-7 font-bold shadow-xl animate-pulse-glow"
+                  className="btn-gold rounded-full border border-brand-orange/40 text-brand-navy text-lg px-10 py-7 font-bold animate-pulse-glow"
                 >
                   <Phone className="h-5 w-5 mr-2" />
                   {t.mobileBar.cta}
@@ -89,12 +89,12 @@ export default function FinalCTA() {
                 className="object-cover object-center"
               />
             </div>
-            <div className="mt-4 rounded-[20px] border border-white/10 bg-brand-navy/70 px-5 py-4 text-sm text-brand-surface/72">
+            <div className="mt-4 rounded-[20px] border border-white/10 bg-brand-navy/70 px-5 py-4 text-sm text-brand-surface/84">
               <div className="flex items-center justify-between gap-3">
                 <span className="font-medium text-brand-surface">Praise Worthy</span>
                 <span className="text-brand-orange">{t.roofingLabel}</span>
               </div>
-              <div className="mt-2 text-xs uppercase tracking-[0.24em] text-brand-surface/54">
+              <div className="mt-2 text-xs uppercase tracking-[0.24em] text-brand-surface/68">
                 {t.common.craftsmanshipTagline}
               </div>
             </div>

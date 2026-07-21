@@ -150,7 +150,7 @@ export default function SearchContent({ locale }: { locale: Locale }) {
                   <a
                     key={city}
                     href={cityPagePathsByCity[city]}
-                    className="rounded-full border border-white/12 bg-white/6 px-3 py-2 text-sm text-brand-surface/80 transition-colors hover:bg-white/12 hover:text-white"
+                    className="rounded-full border border-white/20 bg-white/8 px-3.5 py-2 text-sm text-brand-surface/92 transition-colors hover:bg-white/16 hover:text-white"
                   >
                     {city}
                   </a>

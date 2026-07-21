@@ -73,7 +73,7 @@ export default function ServiceArea() {
                     <span className="block font-medium text-sm">{city.name}</span>
                     <span
                       className={`block text-[11px] uppercase tracking-[0.2em] ${
-                        city.primary ? "text-brand-surface/72" : "text-brand-muted"
+                        city.primary ? "text-brand-surface/84" : "text-brand-muted"
                       }`}
                     >
                       {t.common.homeowner} {t.roofingLabel}

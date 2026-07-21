@@ -178,14 +178,14 @@ export default function GuidesHubPage({
               <h1 className="mb-6 font-heading text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl md:text-6xl">
                 {title}
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-brand-surface/82 md:text-xl">
+              <p className="max-w-3xl text-lg leading-8 text-brand-surface/92 md:text-xl">
                 {intro}
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {guides.slice(0, 3).map((guide) => (
                   <div
                     key={guide.slug}
-                    className="rounded-[24px] border border-white/10 bg-white/6 px-5 py-4 text-sm leading-6 text-brand-surface/84"
+                    className="rounded-[24px] border border-white/10 bg-white/6 px-5 py-4 text-sm leading-6 text-brand-surface/92"
                   >
                     <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange/90">
                       {ui.featuredLabel}
@@ -215,7 +215,7 @@ export default function GuidesHubPage({
               <div className="flex flex-col gap-3 lg:items-end">
                 <LinkButton
                   href={PHONE_HREF}
-                  className="w-full rounded-full border border-brand-orange/40 bg-brand-orange text-brand-navy hover:bg-brand-amber font-semibold lg:w-auto lg:min-w-[280px]"
+                  className="w-full btn-gold rounded-full border border-brand-orange/40 text-brand-navy font-semibold lg:w-auto lg:min-w-[280px]"
                 >
                   <Phone className="mr-2 h-4 w-4" />
                   {ui.callNow} {BUSINESS_PHONE}
@@ -308,11 +308,11 @@ export default function GuidesHubPage({
                   <h3 className="font-heading text-2xl font-bold leading-tight">
                     {ui.supportTitle}
                   </h3>
-                  <p className="mt-3 leading-7 text-brand-surface/84">{ui.ctaBody}</p>
+                  <p className="mt-3 leading-7 text-brand-surface/92">{ui.ctaBody}</p>
                   <div className="mt-5 space-y-3">
                     <LinkButton
                       href={PHONE_HREF}
-                      className="w-full rounded-full border border-brand-orange/40 bg-brand-orange text-brand-navy hover:bg-brand-amber font-semibold"
+                      className="w-full btn-gold rounded-full border border-brand-orange/40 text-brand-navy font-semibold"
                     >
                       <Phone className="mr-2 h-4 w-4" />
                       {ui.callNow} {BUSINESS_PHONE}
@@ -327,7 +327,7 @@ export default function GuidesHubPage({
                       {ui.schedule}
                     </LinkButton>
                   </div>
-                  <div className="mt-5 rounded-[22px] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-6 text-brand-surface/84">
+                  <div className="mt-5 rounded-[22px] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-6 text-brand-surface/92">
                     {ui.reassurance}
                   </div>
                 </section>

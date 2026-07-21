@@ -77,7 +77,7 @@ export default function FreeInspection() {
               <LinkButton
                 href={PHONE_HREF}
                 size="lg"
-                className="rounded-full border border-brand-orange/35 bg-brand-orange hover:bg-brand-amber text-brand-navy font-bold text-base shadow-lg"
+                className="btn-gold rounded-full border border-brand-orange/40 text-brand-navy font-bold text-base"
               >
                 <Phone className="h-5 w-5 mr-2" />
                 {t.inspection.primaryCta}

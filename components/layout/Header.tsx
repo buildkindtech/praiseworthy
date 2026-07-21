@@ -89,20 +89,20 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-brand-surface/92 backdrop-blur-md shadow-[0_18px_40px_rgba(17,33,24,0.12)] border-b border-brand-navy/10"
-          : "bg-brand-surface/78 backdrop-blur-sm"
+          ? "bg-brand-surface/97 backdrop-blur-md shadow-[0_18px_40px_rgba(17,33,24,0.12)] border-b border-brand-navy/10"
+          : "bg-brand-surface/92 backdrop-blur-sm border-b border-brand-navy/6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href={homeHref} className="flex items-center gap-3 shrink-0" aria-label="Go to homepage">
-            <div className="relative h-11 w-[150px] sm:h-12 sm:w-[172px]">
+            <div className="relative h-12 w-[166px] sm:h-14 sm:w-[196px]">
               <Image
                 src={withBasePath("/images/brand/praiseworthy-wordmark.webp")}
                 alt="Praise Worthy Roofing brand wordmark"
                 fill
-                sizes="(min-width: 640px) 172px, 150px"
+                sizes="(min-width: 640px) 196px, 166px"
                 className="object-contain object-left"
               />
             </div>
@@ -129,9 +129,9 @@ export default function Header() {
                   key={code}
                   type="button"
                   onClick={() => handleLocaleChange(code)}
-                  className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                  className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                     locale === code
-                      ? "bg-brand-navy text-brand-surface"
+                      ? "bg-brand-navy text-brand-surface shadow-sm"
                       : "text-brand-navy hover:bg-brand-navy/8"
                   }`}
                 >
@@ -149,7 +149,7 @@ export default function Header() {
             )}
             <a
               href={PHONE_HREF}
-              className="flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-text transition-colors"
+              className="flex items-center gap-2 rounded-full px-2 py-2 text-sm font-semibold text-brand-navy hover:text-brand-text transition-colors"
               aria-label={t.header.callWithNumber}
             >
               <Phone className="h-4 w-4" />
@@ -157,7 +157,7 @@ export default function Header() {
             </a>
             <LinkButton
               href="#free-inspection"
-              className="rounded-full border border-brand-orange/40 bg-brand-orange text-brand-navy hover:bg-brand-amber font-semibold shadow-[0_12px_26px_rgba(27,54,38,0.16)]"
+              className="btn-gold rounded-full border border-brand-orange/45 px-5 text-brand-navy font-semibold"
             >
               {t.common.freeInspection}
             </LinkButton>
@@ -169,31 +169,31 @@ export default function Header() {
               <WeChatQrButton
                 label="微信"
                 size="sm"
-                className="rounded-full border border-brand-orange/40 bg-brand-orange text-brand-navy hover:bg-brand-amber"
+                className="btn-gold h-10 rounded-full border border-brand-orange/45 px-4 text-brand-navy font-semibold"
               />
             ) : (
               <LinkButton
                 href={PHONE_HREF}
                 size="sm"
-                className="rounded-full border border-brand-orange/40 bg-brand-orange text-brand-navy hover:bg-brand-amber"
+                className="btn-gold h-10 rounded-full border border-brand-orange/45 px-4 text-brand-navy font-semibold"
               >
                 <Phone className="h-4 w-4 mr-1" />
                 {t.common.call}
               </LinkButton>
             )}
             <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger className="inline-flex items-center justify-center rounded-full p-2 hover:bg-brand-navy/8 transition-colors">
-                <Menu className="h-5 w-5" />
+              <SheetTrigger className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-brand-navy/8 transition-colors">
+                <Menu className="h-6 w-6" />
               </SheetTrigger>
               <SheetContent side="right" className="w-72 bg-brand-surface">
                 <div className="flex flex-col gap-1 mt-8">
                   <div className="px-4 pb-3">
-                    <div className="relative h-12 w-[176px]">
+                    <div className="relative h-14 w-[200px]">
                       <Image
                         src={withBasePath("/images/brand/praiseworthy-wordmark.webp")}
                         alt="Praise Worthy Roofing brand wordmark"
                         fill
-                        sizes="176px"
+                        sizes="200px"
                         className="object-contain object-left"
                       />
                     </div>
@@ -204,10 +204,10 @@ export default function Header() {
                         key={code}
                         type="button"
                         onClick={() => handleLocaleChange(code)}
-                        className={`rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
+                        className={`rounded-full border px-3.5 py-2 text-sm font-semibold transition-colors ${
                           locale === code
-                            ? "border-brand-navy bg-brand-navy text-brand-surface"
-                            : "border-brand-navy/15 text-brand-navy"
+                            ? "border-brand-navy bg-brand-navy text-brand-surface shadow-sm"
+                            : "border-brand-navy/20 text-brand-navy hover:bg-brand-navy/6"
                         }`}
                       >
                         {code === "zh" ? "中文" : code === "ko" ? "한국어" : code.toUpperCase()}
@@ -228,12 +228,12 @@ export default function Header() {
                     {locale === "zh" ? (
                       <WeChatQrButton
                         label="微信联系"
-                        className="w-full rounded-full border border-brand-orange/40 bg-brand-orange font-semibold text-brand-navy hover:bg-brand-amber"
+                        className="btn-gold h-12 w-full rounded-full border border-brand-orange/45 font-semibold text-brand-navy"
                       />
                     ) : (
                       <LinkButton
                         href={PHONE_HREF}
-                        className="w-full rounded-full border border-brand-orange/40 bg-brand-orange text-brand-navy hover:bg-brand-amber font-semibold"
+                        className="btn-gold h-12 w-full rounded-full border border-brand-orange/45 text-brand-navy font-semibold"
                       >
                         <Phone className="h-4 w-4 mr-2" />
                         {t.common.call} {PHONE_NUMBER}
