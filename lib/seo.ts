@@ -23,6 +23,22 @@ export const YOUTUBE_URL = process.env.NEXT_PUBLIC_YOUTUBE_URL ?? "";
 export const SITE_PUBLISHED_AT = "2026-03-27T09:25:45+09:00";
 export const SITE_UPDATED_AT = "2026-04-13T00:00:00+09:00";
 
+export const BUSINESS_OPENING_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    opens: "08:00",
+    closes: "18:00",
+  },
+] as const;
+
 export const SERVICE_AREAS = [
   "North Richland Hills",
   "Fort Worth",

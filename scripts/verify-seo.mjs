@@ -44,7 +44,7 @@ assert(
   robots.includes(`${APEX_DOMAIN}/sitemap.xml`),
   "robots.txt does not reference the apex-domain sitemap.",
 );
-for (const bot of ["GPTBot", "ChatGPT-User", "ClaudeBot", "PerplexityBot", "Google-Extended", "Bingbot"]) {
+for (const bot of ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "Bingbot"]) {
   assert(robots.includes(`User-Agent: ${bot}`), `robots.txt is missing an explicit rule for ${bot}.`);
 }
 assert(!robots.includes(LEGACY_DOMAIN), "robots.txt still references the legacy www domain.");

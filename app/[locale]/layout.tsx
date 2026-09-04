@@ -11,6 +11,7 @@ import {
   BUSINESS_AUTHOR_NAME,
   BUSINESS_EMAIL,
   BUSINESS_NAME,
+  BUSINESS_OPENING_HOURS,
   BUSINESS_PHONE_E164,
   GOOGLE_MAPS_URL,
   SERVICE_AREAS,
@@ -142,21 +143,7 @@ export default async function LocaleLayout({
                   "@type": "City",
                   name: area,
                 })),
-                openingHoursSpecification: [
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    dayOfWeek: [
-                      "Monday",
-                      "Tuesday",
-                      "Wednesday",
-                      "Thursday",
-                      "Friday",
-                      "Saturday",
-                    ],
-                    opens: "08:00",
-                    closes: "18:00",
-                  },
-                ],
+                openingHoursSpecification: BUSINESS_OPENING_HOURS,
                 contactPoint: [
                   {
                     "@type": "ContactPoint",
