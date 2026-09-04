@@ -23,6 +23,22 @@ export const YOUTUBE_URL = process.env.NEXT_PUBLIC_YOUTUBE_URL ?? "";
 export const SITE_PUBLISHED_AT = "2026-03-27T09:25:45+09:00";
 export const SITE_UPDATED_AT = "2026-04-13T00:00:00+09:00";
 
+export const BUSINESS_OPENING_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    opens: "08:00",
+    closes: "18:00",
+  },
+] as const;
+
 export const SERVICE_AREAS = [
   "North Richland Hills",
   "Fort Worth",
@@ -75,6 +91,8 @@ export function getSameAsLinks() {
   ].filter(Boolean);
 }
 
+export const BING_SITE_VERIFICATION = "B5BB378228E5B9BCAEF3D6F7E7141471";
+
 export function getAuthorMetadata(): Pick<
   Metadata,
   "authors" | "creator" | "publisher"
@@ -83,6 +101,16 @@ export function getAuthorMetadata(): Pick<
     authors: [{ name: BUSINESS_AUTHOR_NAME, url: SITE_URL }],
     creator: BUSINESS_AUTHOR_NAME,
     publisher: BUSINESS_NAME,
+  };
+}
+
+export function getVerificationMetadata(): Pick<Metadata, "verification"> {
+  return {
+    verification: {
+      other: {
+        "msvalidate.01": BING_SITE_VERIFICATION,
+      },
+    },
   };
 }
 

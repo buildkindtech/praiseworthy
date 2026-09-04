@@ -7,6 +7,7 @@ import {
   BUSINESS_AUTHOR_NAME,
   BUSINESS_EMAIL,
   BUSINESS_NAME,
+  BUSINESS_OPENING_HOURS,
   BUSINESS_PHONE_E164,
   GOOGLE_MAPS_URL,
   SERVICE_AREAS,
@@ -15,11 +16,13 @@ import {
   SITE_URL,
   getMetadataBase,
   getSameAsLinks,
+  getVerificationMetadata,
 } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   referrer: "strict-origin-when-cross-origin",
+  ...getVerificationMetadata(),
   icons: {
     icon: [{ url: "/icon.png", type: "image/png" }],
     shortcut: [{ url: "/icon.png", type: "image/png" }],
@@ -84,6 +87,7 @@ export default function DefaultRootLayout({
                   "@type": "City",
                   name: area,
                 })),
+                openingHoursSpecification: BUSINESS_OPENING_HOURS,
                 dateModified: SITE_UPDATED_AT,
               },
             ]),
