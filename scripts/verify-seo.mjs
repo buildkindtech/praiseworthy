@@ -83,6 +83,10 @@ for (const check of htmlChecks) {
     html.includes('name="author"') || html.includes('"author"'),
     `${check.label} is missing author metadata or author schema.`,
   );
+  assert(
+    html.includes('name="msvalidate.01" content="B5BB378228E5B9BCAEF3D6F7E7141471"'),
+    `${check.label} is missing the Bing Webmaster verification meta tag.`,
+  );
 }
 
 console.log("SEO verification passed.");

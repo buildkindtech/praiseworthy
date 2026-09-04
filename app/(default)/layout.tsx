@@ -16,11 +16,13 @@ import {
   SITE_URL,
   getMetadataBase,
   getSameAsLinks,
+  getVerificationMetadata,
 } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   referrer: "strict-origin-when-cross-origin",
+  ...getVerificationMetadata(),
   icons: {
     icon: [{ url: "/icon.png", type: "image/png" }],
     shortcut: [{ url: "/icon.png", type: "image/png" }],

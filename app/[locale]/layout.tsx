@@ -23,6 +23,7 @@ import {
   getMetadataBase,
   getSameAsLinks,
   getSocialMetadata,
+  getVerificationMetadata,
 } from "@/lib/seo";
 
 type LayoutProps = {
@@ -69,6 +70,7 @@ export async function generateMetadata({
       languages: getLanguageAlternates(),
     },
     robots: getDefaultRobots(),
+    ...getVerificationMetadata(),
     ...getSocialMetadata({
       title: meta.title,
       description: meta.description,
