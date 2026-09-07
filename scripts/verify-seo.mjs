@@ -112,7 +112,6 @@ const claimChecks = [
 
 for (const file of claimChecks) {
   const html = readFile(file);
-  assert(!html.includes("500+"), `${file} invents a 500+ roofs claim.`);
   assert(
     !/\bwe waive (your |the )?deductible/i.test(html),
     `${file} offers to waive a deductible.`,
@@ -120,6 +119,31 @@ for (const file of claimChecks) {
   assert(
     !/\bwe guarantee that insurance will pay/i.test(html),
     `${file} guarantees insurance payment.`,
+  );
+}
+
+const bannedClaimPattern =
+  /500\+|24h\b|24-hour|24 hour|24-48|24 to 48|24 a 48|24 到 48|24-48시간/i;
+
+function walkHtmlFiles(dir, found = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walkHtmlFiles(fullPath, found);
+    } else if (entry.name.endsWith(".html")) {
+      found.push(fullPath);
+    }
+  }
+  return found;
+}
+
+for (const fullPath of walkHtmlFiles(OUT_DIR)) {
+  const html = fs.readFileSync(fullPath, "utf8");
+  const relativePath = path.relative(OUT_DIR, fullPath);
+  const match = html.match(bannedClaimPattern);
+  assert(
+    !match,
+    `${relativePath} still contains banned claim text: ${match?.[0]}`,
   );
 }
 

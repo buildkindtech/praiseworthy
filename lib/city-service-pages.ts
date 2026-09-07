@@ -832,7 +832,7 @@ export const cityServicePages: CityServicePage[] = [
     ],
     faq: [
       {
-        question: "Do you offer 24-hour storm response in Arlington?",
+        question: "Do you offer overnight emergency storm response in Arlington?",
         answer:
           "No. We schedule inspections Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. Timing after a busy storm period depends on weather and demand.",
       },
@@ -1020,7 +1020,7 @@ export const cityServicePages: CityServicePage[] = [
     body: [
       "NRH shares weather with Hurst, Keller, and Watauga, so the same evening can leave shingles in several yards. The useful work is still on your roof, not the neighborhood rumor mill.",
       "We walk the conditions we can see, photograph them, and separate storm-related change from ordinary wear. If you want an adjuster there later, we can meet them.",
-      "We will not claim 24-hour response or a guaranteed claim result.",
+      "We will not claim same-day or overnight response, or a guaranteed claim result.",
     ],
     serviceBullets: [
       "North Richland Hills storm inspections",

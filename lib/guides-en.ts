@@ -225,7 +225,7 @@ export const guidesEn = {
         title: "How DFW homeowners book an inspection",
         paragraphs: [
           "Call 682-250-0078 or use the scheduling link on the site. We are open Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time, and closed Sunday.",
-          "After busy storm days, appointment timing depends on weather and current demand. We do not promise 24-hour or same-day arrival.",
+          "After busy storm days, appointment timing depends on weather and current demand. We do not promise same-day or overnight arrival.",
         ],
       },
     ],
@@ -378,7 +378,7 @@ export const guidesEn = {
         title: "When to schedule a roof inspection",
         paragraphs: [
           "Schedule an inspection if you saw hail, found shingles on the ground, have a new leak, or simply cannot tell from the driveway. The visit should include photos and a plain-language explanation of what is visible.",
-          "Praise Worthy inspects DFW roofs Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time, and is closed Sunday. Call 682-250-0078. We do not promise 24-hour response. After a busy storm period, timing depends on weather and demand.",
+          "Praise Worthy inspects DFW roofs Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time, and is closed Sunday. Call 682-250-0078. We do not promise same-day or overnight response. After a busy storm period, timing depends on weather and demand.",
         ],
       },
       {

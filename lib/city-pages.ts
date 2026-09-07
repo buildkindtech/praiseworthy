@@ -66,7 +66,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How quickly can you inspect a roof in Fort Worth?",
         answer:
-          "Most Fort Worth inspections can be scheduled within 24 to 48 hours, depending on storm demand and weather conditions.",
+          "Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. We are closed Sunday. Timing depends on weather and current demand.",
       },
       {
         question: "Do you handle hail damage roof inspections in Fort Worth?",
@@ -220,7 +220,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How quickly can I get a roof inspection in Euless?",
         answer:
-          "Most Euless inspections can be scheduled within 24 to 48 hours, depending on weather and storm demand.",
+          "Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. We are closed Sunday. Timing depends on weather and current demand.",
       },
     ],
   },
@@ -316,7 +316,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can I get a Hurst inspection?",
         answer:
-          "Most Hurst inspections can be scheduled within 24 to 48 hours, depending on weather and storm demand.",
+          "Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. We are closed Sunday. Timing depends on weather and current demand.",
       },
     ],
   },
@@ -413,7 +413,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can you inspect a roof in Richland Hills?",
         answer:
-          "Most Richland Hills inspections can be scheduled within 24 to 48 hours, depending on weather and storm demand.",
+          "Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. We are closed Sunday. Timing depends on weather and current demand.",
       },
     ],
   },
@@ -605,7 +605,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can you schedule a Southlake inspection?",
         answer:
-          "Most Southlake inspections can be scheduled within 24 to 48 hours, depending on storm demand.",
+          "Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. We are closed Sunday. Timing depends on weather and current demand.",
       },
     ],
   },
@@ -797,7 +797,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can I schedule a roof inspection in Little Elm?",
         answer:
-          "Most Little Elm inspections can be scheduled within 24 to 48 hours, depending on weather and storm demand.",
+          "Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. We are closed Sunday. Timing depends on weather and current demand.",
       },
     ],
   },
