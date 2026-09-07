@@ -130,7 +130,8 @@ function verifyOnDiskAssets() {
   const applePath = path.join(ROOT, "app/apple-icon.png");
   const sourcePath = path.join(ROOT, "scripts/assets/pw-monogram.png");
   const publicSvgPath = path.join(ROOT, "public/favicon.svg");
-  const appSvgPath = path.join(ROOT, "app/icon.svg");
+  assert(!fs.existsSync(path.join(ROOT, "app/icon.svg")), "Do not advertise a competing SVG metadata icon.");
+  const appSvgPath = path.join(ROOT, "public/pw-monogram.svg");
   const defaultLayout = fs.readFileSync(
     path.join(ROOT, "app/(default)/layout.tsx"),
     "utf8",
@@ -186,6 +187,9 @@ function verifyOnDiskAssets() {
   const publicSvg = fs.readFileSync(publicSvgPath, "utf8");
   const appSvg = fs.readFileSync(appSvgPath, "utf8");
   assert(publicSvg === appSvg, "public/favicon.svg and app/icon.svg have drifted.");
+  const embeddedPng = publicSvg.match(/href="data:image\/png;base64,([A-Za-z0-9+/=]+)"/)?.[1];
+  assert(embeddedPng && Buffer.from(embeddedPng, "base64").equals(icon), "SVG must embed the exact PW PNG, not a font-based logo approximation.");
+  assert(!publicSvg.includes("<text"), "SVG favicon must not depend on system fonts.");
   assert(
     publicSvg.includes("Praise Worthy monogram"),
     "favicon SVG is missing the existing PW title.",

@@ -9,6 +9,7 @@ It does not redraw the mark.
 
 from __future__ import annotations
 
+import base64
 from pathlib import Path
 
 from PIL import Image
@@ -88,6 +89,17 @@ def main() -> None:
     save_png(resample(master, APPLE_SIZE), APPLE_PNG)
     save_ico(master, FAVICON_ICO)
     save_contact_sheet(master, CONTACT_SHEET)
+    # Embed the exact branded PNG: no font-dependent approximation of the logo.
+    encoded = base64.b64encode(ICON_PNG.read_bytes()).decode("ascii")
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">\n'
+        '  <title id="title">Praise Worthy monogram</title>\n'
+        '  <rect width="512" height="512" fill="#F9F8F4"/>\n'
+        f'  <image width="512" height="512" href="data:image/png;base64,{encoded}"/>\n'
+        '</svg>\n'
+    )
+    for target in (ROOT / "public/pw-monogram.svg", ROOT / "public/favicon.svg"):
+        target.write_text(svg)
     print(
         "generated",
         ICON_PNG.relative_to(ROOT),
