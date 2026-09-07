@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import GuidePage from "@/components/page/GuidePage";
-import { getGuide, getGuideMetadata, guideSlugs } from "@/lib/guides";
+import { getGuideSlugsForLocale } from "@/lib/guides-content";
+import { getGuide, getGuideMetadata } from "@/lib/guides";
 import { locales, type Locale } from "@/lib/i18n";
 
 function isLocale(value: string): value is Locale {
@@ -11,7 +12,9 @@ function isLocale(value: string): value is Locale {
 export function generateStaticParams() {
   return locales
     .filter((locale) => locale !== "en")
-    .flatMap((locale) => guideSlugs.map((slug) => ({ locale, slug })));
+    .flatMap((locale) =>
+      getGuideSlugsForLocale(locale).map((slug) => ({ locale, slug })),
+    );
 }
 
 export async function generateMetadata({

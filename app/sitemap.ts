@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { cityPages } from "@/lib/city-pages";
+import { cityServicePages } from "@/lib/city-service-pages";
+import { hasGuideLocaleCopy } from "@/lib/guides-content";
 import { guideSlugs, getGuidePath, getGuidesHubPath } from "@/lib/guides";
 import { locales, type Locale } from "@/lib/i18n";
 import { PRIVACY_POLICY_PATH, TERMS_PATH, absoluteUrl } from "@/lib/seo";
@@ -8,8 +10,10 @@ export const dynamic = "force-static";
 
 function getGuideAlternates(slug: string) {
   return Object.fromEntries(
-    locales.map((locale) => [locale, absoluteUrl(getGuidePath(slug, locale))]),
-  ) as Record<Locale, string>;
+    locales
+      .filter((locale) => locale === "en" || hasGuideLocaleCopy(locale, slug))
+      .map((locale) => [locale, absoluteUrl(getGuidePath(slug, locale))]),
+  ) as Partial<Record<Locale, string>>;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -43,8 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
+    ...cityServicePages.map((page) => ({
+      url: absoluteUrl(`/${page.citySlug}/${page.serviceSlug}/`),
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    })),
     ...guideSlugs.flatMap((slug) =>
-      locales.map((locale) => ({
+      locales
+        .filter((locale) => locale === "en" || hasGuideLocaleCopy(locale, slug))
+        .map((locale) => ({
         url: absoluteUrl(getGuidePath(slug, locale)),
         changeFrequency: "weekly" as const,
         priority: 0.7,

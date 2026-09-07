@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { cityPagesBySlug, getCityPagePath } from "@/lib/city-pages";
-import { type Locale } from "@/lib/i18n";
+import { getGuideLocaleCopy, hasGuideLocaleCopy } from "@/lib/guides-content";
+import { locales, type Locale } from "@/lib/i18n";
 import {
   BUSINESS_AUTHOR_NAME,
   BUSINESS_NAME,
@@ -12,7 +13,6 @@ import {
   getDefaultRobots,
   getSocialMetadata,
 } from "@/lib/seo";
-import { getGuideLocaleCopy } from "@/lib/guides-content";
 import { localeMeta } from "@/lib/seo-i18n";
 
 export type GuideSection = {
@@ -99,8 +99,32 @@ const guideShared = {
     relatedCitySlugs: ["north-richland-hills", "fort-worth", "bedford"],
     relatedGuideSlugs: [
       "hail-damage-roof-inspection-dfw",
-      "roof-repair-near-me-north-richland-hills",
+      "how-a-free-roof-inspection-works",
       "what-roof-adjusters-look-for-during-an-insurance-inspection",
+    ],
+  },
+  "how-a-free-roof-inspection-works": {
+    relatedCitySlugs: ["north-richland-hills", "fort-worth", "plano"],
+    relatedGuideSlugs: [
+      "how-long-does-a-roof-inspection-take-in-dfw",
+      "hail-damage-roof-inspection-dfw",
+      "when-to-repair-vs-replace-asphalt-shingles-texas",
+    ],
+  },
+  "when-to-repair-vs-replace-asphalt-shingles-texas": {
+    relatedCitySlugs: ["frisco", "carrollton", "arlington"],
+    relatedGuideSlugs: [
+      "how-a-free-roof-inspection-works",
+      "roof-repair-near-me-north-richland-hills",
+      "what-to-do-after-storm-damage-to-your-roof-in-dfw",
+    ],
+  },
+  "what-to-do-after-storm-damage-to-your-roof-in-dfw": {
+    relatedCitySlugs: ["fort-worth", "plano", "north-richland-hills"],
+    relatedGuideSlugs: [
+      "signs-of-wind-damage-on-your-roof",
+      "roof-storm-damage-insurance-texas",
+      "how-a-free-roof-inspection-works",
     ],
   },
 } as const;
@@ -269,10 +293,11 @@ export function getGuideMetadata(guide: GuideArticle, locale: Locale): Metadata 
     alternates: {
       canonical: url,
       languages: {
-        en: getGuideUrl(guide.slug, "en"),
-        es: getGuideUrl(guide.slug, "es"),
-        zh: getGuideUrl(guide.slug, "zh"),
-        ko: getGuideUrl(guide.slug, "ko"),
+        ...Object.fromEntries(
+          locales
+            .filter((item) => item === "en" || hasGuideLocaleCopy(item, guide.slug))
+            .map((item) => [item, getGuideUrl(guide.slug, item)]),
+        ),
         "x-default": getGuideUrl(guide.slug, "en"),
       },
     },

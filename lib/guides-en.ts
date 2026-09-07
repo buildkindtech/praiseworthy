@@ -162,4 +162,248 @@ export const guidesEn = {
       { question: "What should I get after the inspection is finished?", answer: "You should get a clear explanation of what was found, along with practical next steps and photo documentation when needed." },
     ],
   },
+  "how-a-free-roof-inspection-works": {
+    title: "How a Free Roof Inspection Works",
+    metaTitle: "How a Free Roof Inspection Works | DFW Homeowner Guide",
+    metaDescription: "See what a free roof inspection includes in DFW, what you should prepare, and what happens after photos and findings are explained.",
+    eyebrow: "Helpful Homeowner Guide",
+    intro: "A free roof inspection is not a mystery visit and it is not a contract. This guide explains what Praise Worthy looks at, what you should have ready, and what you should walk away with after the appointment.",
+    summary: "A plain-language walkthrough of a free residential roof inspection in DFW, from the first call through photos and next-step guidance.",
+    keywords: [
+      "how a free roof inspection works",
+      "free roof inspection DFW",
+      "what happens during a roof inspection",
+      "schedule free roof inspection",
+    ],
+    keyPoints: [
+      "The initial residential inspection is free and does not require you to approve a repair or replacement.",
+      "A useful visit includes the roof surface, flashing, and leak-risk points, plus photos you can keep.",
+      "You should leave knowing whether to monitor, repair, or keep talking about replacement — and why.",
+    ],
+    sections: [
+      {
+        id: "what-free-means",
+        label: "What Free Means",
+        title: "What a free inspection is, and what it is not",
+        paragraphs: [
+          "Free means the first residential roof inspection does not have an inspection fee. It does not mean you owe a repair, a replacement, or an insurance claim after the visit.",
+          "The purpose is to document visible conditions and explain them in everyday language. If nothing urgent is present, that is a valid outcome.",
+        ],
+      },
+      {
+        id: "before-the-visit",
+        label: "Before You Call",
+        title: "What to have ready before we arrive",
+        paragraphs: [
+          "You do not need to climb on the roof. It helps to know the approximate storm date, whether any ceiling stains or drips are new, and whether you have already spoken with an insurance company.",
+          "If pets use the backyard or a gate is locked, mention that when you schedule so the visit stays simple.",
+        ],
+        bullets: ["Storm date if you remember it", "Notes about new stains or drips", "Access notes for gates or pets", "Any prior roof photos you already have"],
+      },
+      {
+        id: "during-the-visit",
+        label: "During The Visit",
+        title: "What we look at on the roof",
+        paragraphs: [
+          "A typical inspection reviews field shingles, ridges, edges, flashing, vents, and other penetrations. We also look for granule loss, lifted or creased tabs, and soft spots that can become leak paths.",
+          "Timing varies with roof size and condition. Many homes take well under an hour; larger or more complex roofs take longer. See our timing guide if you want more detail on that.",
+        ],
+        bullets: ["Shingles and ridge cap", "Flashing and roof penetrations", "Edges and visible drainage trouble spots", "Photos of the conditions we discuss"],
+      },
+      {
+        id: "after-the-visit",
+        label: "After The Visit",
+        title: "What you should have when we leave",
+        paragraphs: [
+          "You should understand what was visible, whether anything looks urgent, and what the next step would be if you choose to take one. That next step might be monitoring, a defined repair conversation, or a longer replacement discussion.",
+          "If you later want an insurance adjuster to see the same roof, we can meet them at the property. We do not guarantee that insurance will pay, and we do not waive deductibles.",
+        ],
+      },
+      {
+        id: "how-to-schedule",
+        label: "How To Schedule",
+        title: "How DFW homeowners book an inspection",
+        paragraphs: [
+          "Call 682-250-0078 or use the scheduling link on the site. We are open Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time, and closed Sunday.",
+          "After busy storm days, appointment timing depends on weather and current demand. We do not promise same-day or overnight arrival.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Do I have to be home for a free roof inspection?",
+        answer: "It helps if you can describe stains or storm timing, but we can often inspect if roof access is arranged. Mention access details when you book.",
+      },
+      {
+        question: "Will you recommend a new roof at every inspection?",
+        answer: "No. Many inspections end with monitoring or a localized repair conversation. Replacement is discussed only when the visible condition supports it.",
+      },
+      {
+        question: "Does a free inspection include an insurance claim?",
+        answer: "No. Inspection and photo documentation are separate from any claim you choose to file. We can meet an adjuster if you ask. We do not promise payment.",
+      },
+    ],
+  },
+  "when-to-repair-vs-replace-asphalt-shingles-texas": {
+    title: "When to Repair vs Replace Asphalt Shingles in Texas",
+    metaTitle: "Repair vs Replace Asphalt Shingles in Texas | Honest Roof Guide",
+    metaDescription: "Learn how Texas homeowners can think about asphalt shingle repair versus replacement after leaks, hail, or wind — without fake stats or sales pressure.",
+    eyebrow: "Helpful Homeowner Guide",
+    intro: "Asphalt shingles are the most common roof covering on DFW homes. After a leak or a storm, the hard part is knowing whether a local repair is enough or whether a replacement conversation is more honest. This guide explains the difference without promising a specific outcome.",
+    summary: "A careful Texas homeowner guide to asphalt shingle repair versus replacement, based on visible condition rather than a sales default.",
+    keywords: [
+      "when to repair vs replace asphalt shingles Texas",
+      "asphalt shingle roof repair vs replacement",
+      "roof replacement vs repair Texas",
+      "asphalt shingle roof replacement DFW",
+    ],
+    keyPoints: [
+      "Repair is often appropriate when the opening is local and surrounding shingles can still shed water.",
+      "Replacement becomes a fair conversation when wear or storm damage is widespread, not because a contractor prefers a larger job.",
+      "A documented inspection should come before either decision. Insurance payment is never guaranteed.",
+    ],
+    sections: [
+      {
+        id: "how-asphalt-shingles-fail",
+        label: "How Shingles Fail",
+        title: "How asphalt shingles usually show trouble in Texas",
+        paragraphs: [
+          "Asphalt shingles rely on a weather surface and a seal that keeps water moving off the roof. In North Texas, sun, hail, and wind are the usual stresses. Trouble often shows as granule loss, cracked or creased tabs, lifted edges, or leaks at flashing rather than a dramatic hole.",
+          "Those signs do not automatically mean the whole roof is finished. They also do not automatically mean a tube of sealant is enough. The useful question is whether the problem is local or shared across the field.",
+        ],
+        bullets: ["Lifted, creased, or missing tabs", "Granule loss and bald spots", "Cracked shingles after hail", "Flashing or pipe-boot leaks", "Widespread curling or brittleness"],
+      },
+      {
+        id: "when-repair-fits",
+        label: "When Repair Fits",
+        title: "When a repair conversation is usually the honest first path",
+        paragraphs: [
+          "A repair is easier to stand behind when you can point to a limited opening: a few wind-lifted tabs, a failed pipe boot, a short run of step flashing, or a small area of storm wear on an otherwise serviceable field.",
+          "Repair still needs the surrounding roof to be in workable condition. Patching one corner on a field that is broadly bruised or at the end of its useful life often delays a larger decision instead of solving it.",
+        ],
+      },
+      {
+        id: "when-replacement-enters",
+        label: "When Replacement Enters",
+        title: "When replacement should enter the conversation",
+        paragraphs: [
+          "Replacement is a fair topic when functional damage or wear is present across large portions of the roof, when repeated leaks keep returning to the same aging system, or when remaining shingles cannot be matched or sealed in a way that will last.",
+          "Industry guidance commonly treats asphalt shingles as a product with a limited service life, and North Texas weather can shorten that life. That is a general fact, not a measurement of your roof. Only an inspection of the actual surface can say whether your shingles are in that condition.",
+        ],
+      },
+      {
+        id: "storm-and-insurance",
+        label: "Storms And Insurance",
+        title: "How hail, wind, and insurance change the decision",
+        paragraphs: [
+          "After hail or wind, homeowners sometimes hear that every marked roof must be replaced. That is not automatically true. Some hail marks are limited. Some wind damage is a handful of tabs. Some roofs do have widespread functional damage that makes a replacement discussion more accurate.",
+          "If insurance is involved, a contractor can document visible conditions and meet an adjuster. The carrier decides coverage. No one here can honestly guarantee that insurance will pay, and we do not waive deductibles.",
+        ],
+      },
+      {
+        id: "next-step",
+        label: "Next Step",
+        title: "How to decide without rushing",
+        paragraphs: [
+          "Start with a documented inspection. Ask to see the photos that support a repair scope or a replacement discussion. If the explanation jumps to a new roof without showing the field condition, ask for the missing detail.",
+          "Praise Worthy can inspect DFW roofs during business hours and explain findings in plain language. Call 682-250-0078 Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time. Closed Sunday.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Does a ceiling leak in Texas always mean I need a new asphalt roof?",
+        answer: "No. Some leaks come from a local flashing or shingle failure. Some sit on a roof that is broadly worn. An inspection is how you tell those apart.",
+      },
+      {
+        question: "Can hail-damaged asphalt shingles be repaired?",
+        answer: "Sometimes, when the marks are limited. Widespread functional hail wear can make a replacement conversation more honest. Photos should lead that call.",
+      },
+      {
+        question: "How long do asphalt shingles last in Texas?",
+        answer: "There is no single number that fits every roof. Product type, attic ventilation, installation, and North Texas sun, hail, and wind all change the outcome. A local inspection is more useful than a generic year count.",
+      },
+    ],
+  },
+  "what-to-do-after-storm-damage-to-your-roof-in-dfw": {
+    title: "What to Do After Storm Damage to Your Roof in DFW",
+    metaTitle: "What to Do After DFW Roof Storm Damage | Homeowner Steps",
+    metaDescription: "A practical DFW checklist after wind, hail, or heavy rain: stay safe, look from the ground, document what you see, and book a roof inspection.",
+    eyebrow: "Helpful Homeowner Guide",
+    intro: "After a DFW storm, the roof is easy to worry about and easy to guess wrong. This guide is a short sequence: keep people safe, look from the ground, write down what changed, then decide whether to schedule an inspection.",
+    summary: "A step-by-step DFW homeowner checklist for the hours and days after possible roof storm damage, without claiming insurance will pay.",
+    keywords: [
+      "what to do after storm damage to your roof in DFW",
+      "after storm roof inspection DFW",
+      "DFW roof storm damage checklist",
+      "wind and hail roof damage DFW",
+    ],
+    keyPoints: [
+      "Stay off a wet or damaged roof. Most useful first clues are visible from the ground.",
+      "Write down the storm date and photograph yard debris, gutter dents, missing shingles, and interior stains.",
+      "A professional inspection documents the roof itself. Insurance payment is never guaranteed.",
+    ],
+    sections: [
+      {
+        id: "first-hour",
+        label: "First Hour",
+        title: "Keep the house and people safe first",
+        paragraphs: [
+          "If lines are down, a tree is on the house, or water is actively entering a room, treat that as a safety and emergency issue before you think about roofing sales. Avoid standing water near electrical paths and keep kids and pets away from debris.",
+          "Do not climb a wet roof to investigate. Falls after storms are a common way a weather night becomes a worse night.",
+        ],
+      },
+      {
+        id: "ground-check",
+        label: "Ground Check",
+        title: "What you can safely look for from the ground",
+        paragraphs: [
+          "From the yard or a window, look for shingles or tabs on the lawn, granules piled at downspouts, dented gutters or vents, sagging soffit, or a ridge that looks newly uneven. Inside, look for new spots on ceilings or walls.",
+          "These clues do not diagnose the whole roof. They do tell you whether an inspection is worth scheduling soon.",
+        ],
+        bullets: ["Missing shingles or tabs on the ground", "Granules in gutters or on the driveway", "Dents on gutters, vents, or other soft metal", "New interior drips or stains", "Neighbor reports of hail or wind damage"],
+      },
+      {
+        id: "document",
+        label: "Document",
+        title: "What to write down and photograph",
+        paragraphs: [
+          "A short record helps later, whether you only need a repair or you later choose to speak with insurance. Note the date and time of the storm, take ground-level photos, and write down when an interior stain first appeared.",
+          "You do not need a professional camera. Clear phone photos of debris, metal dents, and ceiling changes are enough to start.",
+        ],
+      },
+      {
+        id: "inspection-step",
+        label: "Inspection",
+        title: "When to schedule a roof inspection",
+        paragraphs: [
+          "Schedule an inspection if you saw hail, found shingles on the ground, have a new leak, or simply cannot tell from the driveway. The visit should include photos and a plain-language explanation of what is visible.",
+          "Praise Worthy inspects DFW roofs Monday through Saturday, 8:00 a.m. to 6:00 p.m. Central Time, and is closed Sunday. Call 682-250-0078. We do not promise same-day or overnight response. After a busy storm period, timing depends on weather and demand.",
+        ],
+      },
+      {
+        id: "insurance-limits",
+        label: "Insurance Limits",
+        title: "If you are thinking about insurance",
+        paragraphs: [
+          "Some homeowners call their carrier the same day. Others want roof photos first. Either path is yours. A contractor can document visible conditions and meet an adjuster. The insurer decides whether anything is covered.",
+          "No roofing company can honestly guarantee that insurance will pay, and offering to waive a deductible is not something we do.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Should I tarp the roof myself after a DFW storm?",
+        answer: "Only if you can do it safely without climbing a wet roof. If you cannot, stay on the ground, move belongings away from drips, and describe what you see when you call.",
+      },
+      {
+        question: "Is every DFW storm-damaged roof a replacement?",
+        answer: "No. Some roofs need a local repair. Some only need monitoring. Replacement is a separate conversation when the visible condition supports it.",
+      },
+      {
+        question: "What if I wait a few weeks after the storm?",
+        answer: "You can, but notes and photos are easier to gather sooner, and small openings can grow during the next rain. An earlier inspection gives you more time to decide.",
+      },
+    ],
+  },
 } as const;

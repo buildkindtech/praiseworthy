@@ -21,7 +21,7 @@ export const INSTAGRAM_URL =
 export const LINKEDIN_URL = process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "";
 export const YOUTUBE_URL = process.env.NEXT_PUBLIC_YOUTUBE_URL ?? "";
 export const SITE_PUBLISHED_AT = "2026-03-27T09:25:45+09:00";
-export const SITE_UPDATED_AT = "2026-04-13T00:00:00+09:00";
+export const SITE_UPDATED_AT = "2026-09-07T00:00:00+09:00";
 
 export const BUSINESS_OPENING_HOURS = [
   {

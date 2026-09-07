@@ -14,3 +14,11 @@ const guideLocaleMap = {
 export function getGuideLocaleCopy(locale: Locale, slug: string) {
   return guideLocaleMap[locale]?.[slug as keyof (typeof guideLocaleMap)[typeof locale]] ?? null;
 }
+
+export function hasGuideLocaleCopy(locale: Locale, slug: string) {
+  return Boolean(getGuideLocaleCopy(locale, slug));
+}
+
+export function getGuideSlugsForLocale(locale: Locale) {
+  return Object.keys(guideLocaleMap[locale]);
+}
