@@ -9,6 +9,10 @@ import { LinkButton } from "@/components/ui/link-button";
 import type { CityPage as CityPageType } from "@/lib/city-pages";
 import { getCityPagePath, getCityPageUrl, getRelatedCityPages } from "@/lib/city-pages";
 import {
+  getCityServicePagesForCity,
+  getCityServicePath,
+} from "@/lib/city-service-pages";
+import {
   BUSINESS_EMAIL,
   BUSINESS_NAME,
   BUSINESS_PHONE,
@@ -37,6 +41,7 @@ function matchesAreaLink(area: string, city: string) {
 
 export default function CityPage({ page }: { page: CityPageType }) {
   const relatedCities = getRelatedCityPages(page);
+  const servicePages = getCityServicePagesForCity(page.slug);
   const pageUrl = getCityPageUrl(page.slug);
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Home", item: `${SITE_URL}/` },
@@ -141,6 +146,11 @@ export default function CityPage({ page }: { page: CityPageType }) {
                 <Link href="/guides/" className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
                   Read DFW roofing guides
                 </Link>
+                {servicePages[0] ? (
+                  <Link href={getCityServicePath(servicePages[0].citySlug, servicePages[0].serviceSlug)} className="rounded-full border border-white/24 bg-white/10 px-4 py-2.5 text-brand-surface backdrop-blur-[2px] transition-colors hover:bg-white/18 hover:text-white">
+                    Free roof inspection in {page.city}
+                  </Link>
+                ) : null}
               </nav>
 
               <div className="flex flex-wrap gap-3">
@@ -213,6 +223,42 @@ export default function CityPage({ page }: { page: CityPageType }) {
             </aside>
           </div>
         </section>
+
+        {servicePages.length > 0 ? (
+          <section className="bg-white pb-16 md:pb-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-brand-orange">
+                {page.city} Services
+              </p>
+              <h2 className="mb-8 font-heading text-3xl font-bold text-brand-text md:text-4xl">
+                Inspection, hail, storm, and repair pages
+              </h2>
+              <div className="grid gap-5 md:grid-cols-2">
+                {servicePages.map((item) => (
+                  <Link
+                    key={item.serviceSlug}
+                    href={getCityServicePath(item.citySlug, item.serviceSlug)}
+                    className="group rounded-[28px] border border-brand-navy/8 bg-brand-surface p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                  >
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-brand-orange/90">
+                      {item.serviceLabel}
+                    </p>
+                    <h3 className="mb-3 font-heading text-xl font-bold text-brand-text">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm leading-6 text-brand-muted">
+                      {item.metaDescription}
+                    </p>
+                    <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-navy">
+                      Open this page
+                      <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="bg-brand-surface py-16 md:py-24">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

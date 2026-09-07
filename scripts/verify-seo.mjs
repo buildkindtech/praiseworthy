@@ -22,6 +22,16 @@ const htmlChecks = [
     canonical: `${APEX_DOMAIN}/guides/hail-damage-roof-inspection-dfw/`,
     label: "guide article",
   },
+  {
+    file: path.join("fort-worth", "roof-inspection", "index.html"),
+    canonical: `${APEX_DOMAIN}/fort-worth/roof-inspection/`,
+    label: "city service page",
+  },
+  {
+    file: path.join("guides", "how-a-free-roof-inspection-works", "index.html"),
+    canonical: `${APEX_DOMAIN}/guides/how-a-free-roof-inspection-works/`,
+    label: "new guide article",
+  },
 ];
 
 function assert(condition, message) {
@@ -51,7 +61,10 @@ assert(!robots.includes(LEGACY_DOMAIN), "robots.txt still references the legacy 
 
 const sitemap = readFile("sitemap.xml");
 assert(
-  sitemap.includes(`${APEX_DOMAIN}/guides/`) && sitemap.includes(`${APEX_DOMAIN}/fort-worth/`),
+  sitemap.includes(`${APEX_DOMAIN}/guides/`) &&
+    sitemap.includes(`${APEX_DOMAIN}/fort-worth/`) &&
+    sitemap.includes(`${APEX_DOMAIN}/fort-worth/roof-inspection/`) &&
+    sitemap.includes(`${APEX_DOMAIN}/guides/how-a-free-roof-inspection-works/`),
   "sitemap.xml is missing expected apex-domain URLs.",
 );
 assert(!sitemap.includes(LEGACY_DOMAIN), "sitemap.xml still references the legacy www domain.");
@@ -86,6 +99,27 @@ for (const check of htmlChecks) {
   assert(
     html.includes('name="msvalidate.01" content="B5BB378228E5B9BCAEF3D6F7E7141471"'),
     `${check.label} is missing the Bing Webmaster verification meta tag.`,
+  );
+}
+
+const claimChecks = [
+  path.join("fort-worth", "roof-inspection", "index.html"),
+  path.join("fort-worth", "hail-damage", "index.html"),
+  path.join("guides", "how-a-free-roof-inspection-works", "index.html"),
+  path.join("guides", "when-to-repair-vs-replace-asphalt-shingles-texas", "index.html"),
+  path.join("guides", "what-to-do-after-storm-damage-to-your-roof-in-dfw", "index.html"),
+];
+
+for (const file of claimChecks) {
+  const html = readFile(file);
+  assert(!html.includes("500+"), `${file} invents a 500+ roofs claim.`);
+  assert(
+    !/\bwe waive (your |the )?deductible/i.test(html),
+    `${file} offers to waive a deductible.`,
+  );
+  assert(
+    !/\bwe guarantee that insurance will pay/i.test(html),
+    `${file} guarantees insurance payment.`,
   );
 }
 

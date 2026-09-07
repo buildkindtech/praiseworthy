@@ -158,7 +158,7 @@ export const translations = {
       getStarted: "Get Started",
       getStartedDescription: "Schedule your free roof inspection today. No obligation, no pressure.",
       mapLabel: "View on Google Maps",
-      hours: "Mon - Sat: 8:00 AM - 6:00 PM",
+      hours: "Mon - Sat: 8:00 AM - 6:00 PM CT · Sunday closed",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       rightsReserved: "All rights reserved.",
