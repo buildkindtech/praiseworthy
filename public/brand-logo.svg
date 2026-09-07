@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 260" role="img" aria-labelledby="title desc">
+  <title id="title">Praise Worthy wordmark</title>
+  <desc id="desc">Praise Worthy premium monogram and wordmark in deep green.</desc>
+  <g fill="#333333" stroke="#333333">
+    <text x="110" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="112">P</text>
+    <text x="225" y="160" font-family="Georgia, 'Times New Roman', serif" font-size="112">W</text>
+    <line x1="155" y1="164" x2="234" y2="56" stroke-width="4"/>
+  </g>
+  <text x="370" y="152" font-family="Montserrat, Arial, sans-serif" font-size="52" letter-spacing="16" fill="#1B3626">PRAISEWORTHY</text>
+</svg>

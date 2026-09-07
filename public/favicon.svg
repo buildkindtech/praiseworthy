@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Praise Worthy monogram</title>
+  <rect width="128" height="128" rx="26" fill="#F9F8F4"/>
+  <g fill="#333333" stroke="#333333">
+    <text x="28" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="54">P</text>
+    <text x="61" y="94" font-family="Georgia, 'Times New Roman', serif" font-size="54">W</text>
+    <line x1="46" y1="88" x2="77" y2="33" stroke-width="2.5"/>
+  </g>
+</svg>
