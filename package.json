@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test:host-seo": "node --experimental-strip-types scripts/test-host-seo.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
     "verify:migration": "node scripts/verify-migration.mjs",
-    "verify:all": "npm run lint && npm run build && npm run verify:seo && npm run verify:migration"
+    "verify:http": "node scripts/verify-http.mjs",
+    "verify:server": "node scripts/verify-with-server.mjs",
+    "verify:all": "npm run lint && npm run build && npm run test:host-seo && npm run verify:server"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

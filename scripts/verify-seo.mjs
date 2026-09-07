@@ -1,9 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const OUT_DIR = path.join(process.cwd(), "out");
+const PUBLIC_DIR = path.join(process.cwd(), "public");
+const ORIGIN = (process.env.SEO_VERIFY_ORIGIN ?? "http://127.0.0.1:3005").replace(/\/$/, "");
 const CANONICAL_DOMAIN = "https://www.praiseworthyroofing.com";
 const NON_CANONICAL_DOMAIN = "https://praiseworthyroofing.com";
+const EXPECTED_PHONE_E164 = "+16822500078";
+const EXPECTED_TEL = `tel:${EXPECTED_PHONE_E164}`;
 const LEGAL_PATHS = new Set(["/privacy-policy/", "/terms/"]);
 const LOCALES = ["en", "es", "zh", "ko"];
 const CITY_SLUGS = [
@@ -58,14 +61,10 @@ const PERFORMANCE_IMAGE_PATHS = [
   "images/before-after/front-house-after.webp",
 ];
 
+const htmlCache = new Map();
+
 function assert(condition, message) {
   if (!condition) throw new Error(message);
-}
-
-function readFile(relativePath) {
-  const fullPath = path.join(OUT_DIR, relativePath);
-  assert(fs.existsSync(fullPath), `Missing build artifact: ${relativePath}`);
-  return fs.readFileSync(fullPath, "utf8");
 }
 
 function decodeXml(value) {
@@ -85,19 +84,51 @@ function decodeHtml(value) {
     );
 }
 
-function outputFileForUrl(url) {
-  const pathname = decodeURIComponent(new URL(url, CANONICAL_DOMAIN).pathname);
-  if (pathname === "/") return "index.html";
-  if (path.extname(pathname)) return pathname.replace(/^\//, "");
-  return path.join(pathname.replace(/^\//, "").replace(/\/$/, ""), "index.html");
+async function fetchResponse(pathname, { allowStatuses = [200] } = {}) {
+  const url = `${ORIGIN}${pathname}`;
+  let response;
+  try {
+    response = await fetch(url, {
+      redirect: "manual",
+      signal: AbortSignal.timeout(20_000),
+      headers: { "user-agent": "PW-SEO-Verify/1.0" },
+    });
+  } catch (error) {
+    throw new Error(`Unable to fetch ${url}: ${error.message}`);
+  }
+  assert(
+    allowStatuses.includes(response.status),
+    `${pathname} returned HTTP ${response.status}; expected ${allowStatuses.join("/")}.`,
+  );
+  return response;
+}
+
+async function fetchText(pathname, options) {
+  const response = await fetchResponse(pathname, options);
+  return response.text();
+}
+
+async function fetchHtml(pathname) {
+  if (htmlCache.has(pathname)) return htmlCache.get(pathname);
+  const html = await fetchText(pathname);
+  htmlCache.set(pathname, html);
+  return html;
+}
+
+function publicFileExists(pathname) {
+  const relative = decodeURIComponent(pathname).replace(/^\//, "");
+  return fs.existsSync(path.join(PUBLIC_DIR, relative));
 }
 
 function outputTargetExists(url) {
   const parsed = new URL(url, CANONICAL_DOMAIN);
   const pathname = decodeURIComponent(parsed.pathname);
-  const direct = path.join(OUT_DIR, pathname.replace(/^\//, ""));
-  const index = path.join(direct, "index.html");
-  return fs.existsSync(direct) || fs.existsSync(index);
+  if (/\.[a-zA-Z0-9]+$/.test(pathname)) {
+    return publicFileExists(pathname);
+  }
+  const normalized =
+    pathname === "/" || pathname.endsWith("/") ? pathname : `${pathname}/`;
+  return EXPECTED_INDEXABLE_PATHS.has(normalized) || LEGAL_PATHS.has(normalized);
 }
 
 function getAttributeTags(html, tagName) {
@@ -175,6 +206,22 @@ function validateJsonLd(html, label) {
     schemas.filter((schema) => collectSchemaTypes(schema).has("FAQPage")).length <= 1,
     `${label} contains duplicate FAQPage schema blocks.`,
   );
+
+  const phones = [];
+  const visit = (value) => {
+    if (Array.isArray(value)) return value.forEach(visit);
+    if (!value || typeof value !== "object") return;
+    if (typeof value.telephone === "string") phones.push(value.telephone);
+    Object.values(value).forEach(visit);
+  };
+  schemas.forEach(visit);
+  assert(phones.length > 0, `${label} schema is missing telephone.`);
+  for (const phone of phones) {
+    assert(
+      phone === EXPECTED_PHONE_E164,
+      `${label} schema telephone ${phone} is not ${EXPECTED_PHONE_E164}.`,
+    );
+  }
   return { schemaTypes, schemas };
 }
 
@@ -231,10 +278,28 @@ function validateInternalLinks(html, label) {
   }
 }
 
-assert(fs.existsSync(OUT_DIR), "Missing ./out directory. Run `npm run build` first.");
+function validatePhone(html, label) {
+  const telHrefs = getAttributeTags(html, "a")
+    .map((tag) => getAttribute(tag, "href") ?? "")
+    .filter((href) => href.toLowerCase().startsWith("tel:"));
+  assert(telHrefs.length > 0, `${label} has no tel: links.`);
+  for (const href of telHrefs) {
+    assert(!href.includes("*"), `${label} tel href contains a masked/star value: ${href}`);
+    assert(
+      href === EXPECTED_TEL,
+      `${label} tel href ${href} is not ${EXPECTED_TEL}.`,
+    );
+  }
+  assert(
+    /\btel:\+1\d{10}\b/.test(html) && html.includes(EXPECTED_TEL),
+    `${label} is missing the verified E.164 tel link.`,
+  );
+}
+
+assert(fs.existsSync(PUBLIC_DIR), "Missing ./public directory.");
 
 const performanceImageBytes = PERFORMANCE_IMAGE_PATHS.reduce((total, imagePath) => {
-  const fullPath = path.join(OUT_DIR, imagePath);
+  const fullPath = path.join(PUBLIC_DIR, imagePath);
   assert(fs.existsSync(fullPath), `Missing optimized image: ${imagePath}`);
   return total + fs.statSync(fullPath).size;
 }, 0);
@@ -246,12 +311,12 @@ for (const socialImage of [
   "images/social/social-card.webp",
   "images/social/article-roofing-dfw.webp",
 ]) {
-  const fullPath = path.join(OUT_DIR, socialImage);
+  const fullPath = path.join(PUBLIC_DIR, socialImage);
   assert(fs.existsSync(fullPath), `Missing social/search image: ${socialImage}`);
   assert(fs.statSync(fullPath).size < 200_000, `${socialImage} exceeds 200 KB.`);
 }
 
-const robots = readFile("robots.txt");
+const robots = await fetchText("/robots.txt");
 assert(
   robots.includes(`${CANONICAL_DOMAIN}/sitemap.xml`),
   "robots.txt does not reference the canonical-host sitemap.",
@@ -268,7 +333,7 @@ for (const bot of [
 }
 assert(!robots.includes(NON_CANONICAL_DOMAIN), "robots.txt references the non-canonical apex host.");
 
-const sitemap = readFile("sitemap.xml");
+const sitemap = await fetchText("/sitemap.xml");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) =>
   decodeXml(match[1]),
 );
@@ -307,8 +372,7 @@ const stableEntities = new Map();
 for (const url of sitemapUrls) {
   const parsed = new URL(url);
   assert(parsed.origin === CANONICAL_DOMAIN, `Non-canonical sitemap URL: ${url}`);
-  const relativeFile = outputFileForUrl(url);
-  const html = readFile(relativeFile);
+  const html = await fetchHtml(parsed.pathname);
   const label = parsed.pathname;
 
   const titles = html.match(/<title>[^<]+<\/title>/gi) ?? [];
@@ -357,6 +421,7 @@ for (const url of sitemapUrls) {
     `${label} is missing author metadata or schema.`,
   );
 
+  validatePhone(html, label);
   validateInternalLinks(html, label);
 
   const linkedPaths = new Set(
@@ -486,15 +551,15 @@ for (const targetPath of EXPECTED_INDEXABLE_PATHS) {
   assert(inbound, `${targetPath} is orphaned from every other indexable page.`);
 }
 
-const notFound = readFile("404.html");
+const notFound = await fetchText("/this-page-does-not-exist-seo-verify/", { allowStatuses: [404] });
 assert(
   /<meta\b[^>]*name=["']robots["'][^>]*noindex/i.test(notFound),
-  "404.html must be noindex.",
+  "404 page must be noindex.",
 );
 
 for (const legalPath of LEGAL_PATHS) {
-  const html = readFile(outputFileForUrl(`${CANONICAL_DOMAIN}${legalPath}`));
+  const html = await fetchHtml(legalPath);
   assert(/<meta\b[^>]*name=["']robots["'][^>]*noindex/i.test(html), `${legalPath} must remain noindex.`);
 }
 
-console.log(`SEO verification passed for all ${sitemapUrls.length} indexable URLs plus legal pages.`);
+console.log(`SEO verification passed for all ${sitemapUrls.length} indexable URLs plus legal pages against ${ORIGIN}.`);

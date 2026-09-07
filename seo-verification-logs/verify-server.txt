@@ -1,0 +1,20 @@
+
+> praiseworthy-web@0.1.0 verify:server
+> node scripts/verify-with-server.mjs
+
+SEO verification passed for all 49 indexable URLs plus legal pages against http://127.0.0.1:3005.
+Migration parity passed: all 49 live indexable paths are preserved.
+ok  www home stays 200 without preview noindex
+ok  apex home 308 to www preserving slash
+ok  apex path+query canonicalizes in one hop including slash
+ok  www document route without slash normalizes and keeps query
+ok  localhost is not redirected to www
+ok  localhost document slash stays local
+ok  arbitrary preview host is not redirected to www
+ok  Vercel alias is noindexed and not redirected to www
+ok  staging host is noindexed
+ok  API GET is not slash-redirected
+ok  API POST stays on /api/lead without outbound webhook
+ok  static asset is not slash-redirected
+HTTP host/slash/preview verification passed against http://127.0.0.1:3005.
+verify:server passed against http://127.0.0.1:3005

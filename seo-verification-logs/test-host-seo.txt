@@ -1,0 +1,12 @@
+ok  normalizes Host with port
+ok  apex is the only host canonicalized
+ok  noindex is host-scoped to Vercel aliases and known staging
+ok  slash normalization is route-only
+ok  apex+slash+query collapse into one www 308
+ok  www document slash redirect stays on the canonical https host
+ok  localhost slash redirect does not go to www
+ok  localhost never redirects to www
+ok  preview alias gets noindex and is not redirected to www
+ok  API and assets are not slash-redirected on preview
+host-seo regression tests passed
+HOSTSEO_EXIT:0
