@@ -64,6 +64,10 @@ check("slash normalization is route-only", () => {
   assert.equal(needsTrailingSlash("/images/social/social-card.webp/"), false);
   assert.equal(needsTrailingSlash("/robots.txt"), false);
   assert.equal(needsTrailingSlash("/sitemap.xml"), false);
+  assert.equal(isFilePath("/favicon.ico"), true);
+  assert.equal(needsTrailingSlash("/favicon.ico"), false);
+  assert.equal(isFilePath("/icon.png"), true);
+  assert.equal(needsTrailingSlash("/apple-icon.png"), false);
 });
 
 check("apex+slash+query collapse into one www 308", () => {

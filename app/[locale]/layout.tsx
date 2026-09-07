@@ -55,11 +55,6 @@ export async function generateMetadata({
     ...getAuthorMetadata(),
     metadataBase: getMetadataBase(),
     referrer: "strict-origin-when-cross-origin",
-    icons: {
-      icon: [{ url: "/icon.png", type: "image/png" }],
-      shortcut: [{ url: "/icon.png", type: "image/png" }],
-      apple: [{ url: "/apple-icon.png", type: "image/png" }],
-    },
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,

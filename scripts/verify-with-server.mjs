@@ -80,6 +80,7 @@ try {
   await run("node", ["scripts/verify-seo.mjs"]);
   await run("node", ["scripts/verify-migration.mjs"]);
   await run("node", ["scripts/verify-http.mjs"]);
+  await run("node", ["scripts/verify-favicons.mjs"]);
 } finally {
   stopServer();
 }

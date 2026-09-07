@@ -23,11 +23,6 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   referrer: "strict-origin-when-cross-origin",
-  icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    shortcut: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png" }],
-  },
 };
 
 export default function DefaultRootLayout({
