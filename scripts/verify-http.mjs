@@ -136,16 +136,8 @@ record("staging host is noindexed", async () => {
   assert(res.robots === "noindex, nofollow", `staging X-Robots-Tag was ${res.robots}`);
 });
 
-record("API GET is not slash-redirected", async () => {
-  const res = await request({
-    pathname: "/api/lead",
-    host: "www.praiseworthyroofing.com",
-  });
-  assert(res.status === 405, `API GET expected 405, got ${res.status} location=${res.location}`);
-});
-
-record("API POST stays on /api/lead without outbound webhook", async () => {
-  const payload = JSON.stringify({
+function honeypotPayload() {
+  return JSON.stringify({
     name: "Local SEO Verify",
     phone: "6822500078",
     zip: "76180",
@@ -155,9 +147,13 @@ record("API POST stays on /api/lead without outbound webhook", async () => {
     message: "local regression only",
     honeypot: "1",
   });
-  const res = await request({
+}
+
+async function postLeadHoneypot(host) {
+  const payload = honeypotPayload();
+  return request({
     pathname: "/api/lead",
-    host: "www.praiseworthyroofing.com",
+    host,
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -165,18 +161,57 @@ record("API POST stays on /api/lead without outbound webhook", async () => {
     },
     body: payload,
   });
-  assert(res.status === 200, `honeypot POST expected 200, got ${res.status} ${res.body}`);
-  const json = JSON.parse(res.body);
-  assert(json.ok === true, `unexpected API body ${res.body}`);
-  assert(String(json.lead_id || "").startsWith("ignored_"), `expected ignored lead id, got ${json.lead_id}`);
+}
+
+record("API GET is 405 with no redirect on www, apex, and preview", async () => {
+  for (const host of [
+    "www.praiseworthyroofing.com",
+    "praiseworthyroofing.com",
+    "praiseworthy-web.vercel.app",
+  ]) {
+    const res = await request({ pathname: "/api/lead", host });
+    assert(
+      res.status === 405,
+      `${host} API GET expected 405, got ${res.status} location=${res.location}`,
+    );
+    assert(!res.location, `${host} API GET redirected to ${res.location}`);
+  }
 });
 
-record("static asset is not slash-redirected", async () => {
+record("API POST stays on /api/lead without outbound webhook on www, apex, and preview", async () => {
+  for (const host of [
+    "www.praiseworthyroofing.com",
+    "praiseworthyroofing.com",
+    "praiseworthy-web.vercel.app",
+  ]) {
+    const res = await postLeadHoneypot(host);
+    assert(!res.location, `${host} API POST redirected to ${res.location}`);
+    assert(res.status === 200, `${host} honeypot POST expected 200, got ${res.status} ${res.body}`);
+    const json = JSON.parse(res.body);
+    assert(json.ok === true, `${host} unexpected API body ${res.body}`);
+    assert(
+      String(json.lead_id || "").startsWith("ignored_"),
+      `${host} expected ignored lead id, got ${json.lead_id}`,
+    );
+  }
+});
+
+record("www static asset is 200 without preview noindex", async () => {
   const res = await request({
     pathname: "/images/social/social-card.webp",
     host: "www.praiseworthyroofing.com",
   });
-  assert(res.status === 200, `asset expected 200, got ${res.status} ${res.location}`);
+  assert(res.status === 200, `www asset expected 200, got ${res.status} ${res.location}`);
+  assert(!res.robots, `www asset must not send X-Robots-Tag, got ${res.robots}`);
+});
+
+record("preview static asset is noindexed and not slash-redirected", async () => {
+  const res = await request({
+    pathname: "/images/social/social-card.webp",
+    host: "praiseworthy-web.vercel.app",
+  });
+  assert(res.status === 200, `preview asset expected 200, got ${res.status} ${res.location}`);
+  assert(res.robots === "noindex, nofollow", `preview asset X-Robots-Tag was ${res.robots}`);
 });
 
 let failed = 0;

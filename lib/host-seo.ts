@@ -94,6 +94,12 @@ export function applyHostSeo(input: HostSeoInput): HostSeoResult {
   const search = input.search || "";
   const pathname = input.pathname || "/";
 
+  // Lead POST (and other /api/*) must stay on the requested host. Apex→www
+  // would be a cross-origin 308 and drop the submission.
+  if (isApiPath(pathname)) {
+    return { redirectLocation: null, robotsTag };
+  }
+
   if (shouldCanonicalizeApexHost(host)) {
     return {
       redirectLocation: `https://${CANONICAL_HOST}${withTrailingSlash(pathname)}${search}`,

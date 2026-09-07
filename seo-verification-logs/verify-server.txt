@@ -1,6 +1,5 @@
-
-> praiseworthy-web@0.1.0 verify:server
-> node scripts/verify-with-server.mjs
+> praiseworthy-web@0.1.0 verify:all
+> npm run lint && npm run build && npm run test:host-seo && npm run verify:server
 
 SEO verification passed for all 49 indexable URLs plus legal pages against http://127.0.0.1:3005.
 Migration parity passed: all 49 live indexable paths are preserved.
@@ -13,8 +12,10 @@ ok  localhost document slash stays local
 ok  arbitrary preview host is not redirected to www
 ok  Vercel alias is noindexed and not redirected to www
 ok  staging host is noindexed
-ok  API GET is not slash-redirected
-ok  API POST stays on /api/lead without outbound webhook
-ok  static asset is not slash-redirected
+ok  API GET is 405 with no redirect on www, apex, and preview
+ok  API POST stays on /api/lead without outbound webhook on www, apex, and preview
+ok  www static asset is 200 without preview noindex
+ok  preview static asset is noindexed and not slash-redirected
 HTTP host/slash/preview verification passed against http://127.0.0.1:3005.
 verify:server passed against http://127.0.0.1:3005
+VERIFY_ALL_EXIT:0

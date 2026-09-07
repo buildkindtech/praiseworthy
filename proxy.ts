@@ -28,5 +28,8 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
+  // Literal matcher so Next can statically analyze it. Public images, API,
+  // and HTML are included; `_next/static` and `_next/image` stay on the
+  // asset pipeline (intercepting hashed chunks is not safe).
   matcher: ["/((?!_next/static|_next/image).*)"],
 };

@@ -8,5 +8,9 @@ ok  localhost slash redirect does not go to www
 ok  localhost never redirects to www
 ok  preview alias gets noindex and is not redirected to www
 ok  API and assets are not slash-redirected on preview
+ok  API stays on apex instead of cross-origin www redirect
+ok  production hosts never receive preview noindex
+ok  vercel.json keeps exact staging host and no invalid wildcard regex
+ok  proxy matcher covers HTML, public images, and API but not hashed Next assets
 host-seo regression tests passed
 HOSTSEO_EXIT:0
