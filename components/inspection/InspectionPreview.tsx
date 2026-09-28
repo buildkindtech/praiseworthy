@@ -12,6 +12,7 @@ import {
   Search,
   User,
 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import { translations, type Locale } from "@/lib/i18n";
 import {
   isValidName,
@@ -121,6 +122,7 @@ export default function InspectionPreview({
         return;
       }
 
+      trackEvent("generate_lead", { lead_source: "inspection_form", need });
       setSuccess(true);
     } catch {
       setError("generic");

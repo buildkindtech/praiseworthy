@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "@/app/globals.css";
+import { ContactClickTracker } from "@/components/analytics/ContactClickTracker";
+import { GoogleAnalyticsHead } from "@/components/analytics/GoogleAnalytics";
 import { notFound } from "next/navigation";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
 import { locales, type Locale } from "@/lib/i18n";
@@ -98,7 +100,11 @@ export default async function LocaleLayout({
       lang={meta.languageTag}
       className={`${manrope.variable} ${fraunces.variable} scroll-smooth`}
     >
+      <head>
+        <GoogleAnalyticsHead />
+      </head>
       <body id="top" className="font-sans antialiased">
+        <ContactClickTracker />
         <LanguageProvider initialLocale={locale}>
           <script
             type="application/ld+json"

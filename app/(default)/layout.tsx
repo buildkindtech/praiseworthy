@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "@/app/globals.css";
+import { ContactClickTracker } from "@/components/analytics/ContactClickTracker";
+import { GoogleAnalyticsHead } from "@/components/analytics/GoogleAnalytics";
 import { localeMeta } from "@/lib/seo-i18n";
 import {
   createRoofingContractorSchema,
@@ -35,7 +37,11 @@ export default function DefaultRootLayout({
       lang={localeMeta.en.languageTag}
       className={`${manrope.variable} ${fraunces.variable} scroll-smooth`}
     >
+      <head>
+        <GoogleAnalyticsHead />
+      </head>
       <body id="top" className="font-sans antialiased">
+        <ContactClickTracker />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

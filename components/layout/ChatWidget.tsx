@@ -4,6 +4,7 @@ import { useMemo, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import { Calendar, MessageCircle, Phone, X } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { trackEvent } from "@/lib/analytics";
 import { isValidName, isValidPhone, isValidZip, TRACKING_KEYS } from "@/lib/lead";
 
 const PHONE_HREF = "tel:+16822500078";
@@ -90,6 +91,7 @@ export default function ChatWidget() {
         return;
       }
 
+      trackEvent("generate_lead", { lead_source: "chat", need: "check" });
       setSuccess(true);
     } catch {
       setError("generic");
