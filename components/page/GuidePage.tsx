@@ -41,50 +41,50 @@ const SCHEDULE_HREF =
 const guideUiCopy = {
   en: {
     call: "Call",
-    schedule: "Schedule a Free Inspection",
+    schedule: "Schedule a phone call",
     summary: "Quick Summary",
     relatedAreas: "Related Service Areas",
     relatedGuides: "More Helpful Guides",
     readGuide: "Read guide",
     commonQuestions: "Common Questions",
     faqTitle: "Questions homeowners often ask",
-    bookInspection: "Book a free inspection",
+    bookInspection: "Request a free inspection",
     roofInspectionIn: "Roof inspection in",
   },
   es: {
     call: "Llamar",
-    schedule: "Agenda una inspeccion gratis",
+    schedule: "Agendar llamada telefónica",
     summary: "Resumen rapido",
     relatedAreas: "Zonas de servicio relacionadas",
     relatedGuides: "Mas guias utiles",
     readGuide: "Leer guia",
     commonQuestions: "Preguntas comunes",
     faqTitle: "Preguntas que suelen hacer los propietarios",
-    bookInspection: "Agenda una inspeccion gratis",
+    bookInspection: "Solicitar inspección gratis",
     roofInspectionIn: "Inspeccion de techo en",
   },
   zh: {
     call: "致电",
-    schedule: "预约免费检查",
+    schedule: "预约电话沟通",
     summary: "快速总结",
     relatedAreas: "相关服务区域",
     relatedGuides: "更多实用指南",
     readGuide: "查看指南",
     commonQuestions: "常见问题",
     faqTitle: "业主常问的问题",
-    bookInspection: "预约免费检查",
+    bookInspection: "申请免费屋顶检查",
     roofInspectionIn: "屋顶检查服务地区",
   },
   ko: {
     call: "전화",
-    schedule: "무료 점검 예약하기",
+    schedule: "전화 상담 예약하기",
     summary: "빠른 요약",
     relatedAreas: "관련 서비스 지역",
     relatedGuides: "추가 가이드",
     readGuide: "가이드 보기",
     commonQuestions: "자주 묻는 질문",
     faqTitle: "주택 소유주가 자주 묻는 질문",
-    bookInspection: "무료 점검 예약하기",
+    bookInspection: "무료 점검 신청하기",
     roofInspectionIn: "지붕 점검 지역",
   },
 } as const;
@@ -101,7 +101,7 @@ export default function GuidePage({
   const relatedGuides = getRelatedGuides(locale, guide);
   const ui = guideUiCopy[locale];
   const homeInspectionHref =
-    locale === "en" ? "/#services" : `/${locale}/#services`;
+    locale === "en" ? "/#inspection-request-hero" : `/${locale}/#inspection-request-hero`;
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Home", item: locale === "en" ? `${SITE_URL}/` : `${SITE_URL}/${locale}/` },
     { name: "Guides", item: locale === "en" ? `${SITE_URL}/guides/` : `${SITE_URL}/${locale}/guides/` },

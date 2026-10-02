@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "generate:favicons": "python3 scripts/generate-favicons.py",
+    "test:leads": "node scripts/test-leads.mjs",
     "test:host-seo": "node --experimental-strip-types scripts/test-host-seo.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
     "verify:favicons": "node scripts/verify-favicons.mjs",

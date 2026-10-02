@@ -6,9 +6,6 @@ import { LinkButton } from "@/components/ui/link-button";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { withBasePath } from "@/lib/seo";
 
-const SCHEDULE_HREF =
-  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01K4KNgIlF5_N0dcliaOX-17GpOsjDRKNjnDCZ_giIDfnAqaxLZY90DLEHQfXcTRKuNAtlZ1_v";
-
 export default function FreeInspection() {
   const { t } = useLanguage();
 
@@ -53,9 +50,7 @@ export default function FreeInspection() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton
-                href={SCHEDULE_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#inspection-request-hero"
                 className="h-auto rounded-full bg-gradient-to-br from-brand-amber to-brand-orange px-5 py-2.5 font-extrabold text-[#081810] hover:brightness-105"
               >
                 {t.inspection.primaryCta}

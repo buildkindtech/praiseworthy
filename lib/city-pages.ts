@@ -65,7 +65,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How quickly can you inspect a roof in Fort Worth?",
         answer:
-          "Inspection availability depends on current storm demand and weather conditions. Check the online calendar or call for current options.",
+          "Inspection availability depends on current storm demand and weather conditions. Send a request or call to confirm an onsite visit. The online calendar schedules a phone call.",
       },
       {
         question: "Do you handle hail damage roof inspections in Fort Worth?",
@@ -219,7 +219,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How quickly can I get a roof inspection in Euless?",
         answer:
-          "Inspection availability depends on current weather and storm demand. Check the online calendar or call for current options.",
+          "Inspection availability depends on current weather and storm demand. Send a request or call to confirm an onsite visit. The online calendar schedules a phone call.",
       },
     ],
   },
@@ -267,7 +267,7 @@ export const cityPages: CityPage[] = [
       {
         question: "Can I schedule a free inspection online or by phone?",
         answer:
-          `Yes. Arlington homeowners can call ${BUSINESS_PHONE} or use the online scheduling link on the site.`,
+          `Yes. Arlington homeowners can call ${BUSINESS_PHONE} or send a request on the site. We confirm onsite timing by phone; the online calendar schedules a phone call.`,
       },
     ],
   },
@@ -315,7 +315,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can I get a Hurst inspection?",
         answer:
-          "Inspection availability depends on current weather and storm demand. Check the online calendar or call for current options.",
+          "Inspection availability depends on current weather and storm demand. Send a request or call to confirm an onsite visit. The online calendar schedules a phone call.",
       },
     ],
   },
@@ -412,7 +412,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can you inspect a roof in Richland Hills?",
         answer:
-          "Inspection availability depends on current weather and storm demand. Check the online calendar or call for current options.",
+          "Inspection availability depends on current weather and storm demand. Send a request or call to confirm an onsite visit. The online calendar schedules a phone call.",
       },
     ],
   },
@@ -604,7 +604,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can you schedule a Southlake inspection?",
         answer:
-          "Inspection availability depends on current storm demand and weather. Check the online calendar or call for current options.",
+          "Inspection availability depends on current storm demand and weather. Send a request or call to confirm an onsite visit. The online calendar schedules a phone call.",
       },
     ],
   },
@@ -748,7 +748,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How do I schedule a Plano roof inspection?",
         answer:
-          `Call ${BUSINESS_PHONE} or use the online scheduling option on the site to request a free inspection.`,
+          `Call ${BUSINESS_PHONE} or send a free inspection request on the site. We confirm onsite timing by phone; the online calendar schedules a phone call.`,
       },
     ],
   },
@@ -796,7 +796,7 @@ export const cityPages: CityPage[] = [
       {
         question: "How soon can I schedule a roof inspection in Little Elm?",
         answer:
-          "Inspection availability depends on current weather and storm demand. Check the online calendar or call for current options.",
+          "Inspection availability depends on current weather and storm demand. Send a request or call to confirm an onsite visit. The online calendar schedules a phone call.",
       },
     ],
   },

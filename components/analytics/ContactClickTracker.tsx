@@ -10,7 +10,7 @@ function eventForHref(href: string): string | null {
   return null;
 }
 
-/** One delegated listener covers every phone, email and booking link on the site. */
+/** These measure link clicks only, never completed calls or calendar appointments. */
 export function ContactClickTracker() {
   useEffect(() => {
     function onClick(event: MouseEvent) {
@@ -20,7 +20,7 @@ export function ContactClickTracker() {
       const name = eventForHref(href);
       if (!name) return;
       trackEvent(name, {
-        link_url: href.split("?")[0],
+        link_type: name.replace("_click", ""),
         page_path: window.location.pathname,
       });
     }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useMemo, useRef, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import {
   Calendar,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import { translations, type Locale } from "@/lib/i18n";
+import { GOOGLE_MAPS_URL } from "@/lib/seo";
 import {
   isValidName,
   isValidPhone,
@@ -70,6 +71,7 @@ export default function InspectionPreview({
   const [error, setError] = useState<FieldError>("");
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
+  const submitBlocked = useRef(false);
 
   const attribution = useMemo(readAttribution, []);
 
@@ -83,6 +85,7 @@ export default function InspectionPreview({
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitBlocked.current) return;
     const nextError = validate();
     if (nextError) {
       setError(nextError);
@@ -90,6 +93,8 @@ export default function InspectionPreview({
     }
 
     setError("");
+    submitBlocked.current = true;
+    let completed = false;
     setSending(true);
 
     try {
@@ -109,7 +114,7 @@ export default function InspectionPreview({
       });
 
       const payload = (await response.json().catch(() => null)) as
-        | { ok?: boolean; error?: string }
+        | { ok?: boolean; accepted?: boolean; error?: string }
         | null;
 
       if (response.status === 429 || payload?.error === "rate_limited") {
@@ -117,17 +122,21 @@ export default function InspectionPreview({
         return;
       }
 
-      if (!response.ok || !payload?.ok) {
+      if (!response.ok || !payload?.ok || typeof payload.accepted !== "boolean") {
         setError("generic");
         return;
       }
 
-      trackEvent("generate_lead", { lead_source: "inspection_form", need });
+      if (payload.accepted === true) {
+        trackEvent("generate_lead", { lead_source: "inspection_form", need });
+      }
+      completed = true;
       setSuccess(true);
     } catch {
       setError("generic");
     } finally {
       setSending(false);
+      submitBlocked.current = completed;
     }
   }
 
@@ -147,7 +156,7 @@ export default function InspectionPreview({
                 : "";
 
   return (
-    <aside className="pw-inspection" aria-labelledby={titleId}>
+    <aside id={`inspection-request-${instanceId}`} className="pw-inspection" aria-labelledby={titleId}>
       <div className="pw-inspection__head">
         <span className="pw-inspection__badge">
           <span className="pw-inspection__pulse" aria-hidden="true" />
@@ -182,6 +191,9 @@ export default function InspectionPreview({
         <form className="pw-inspection__form" onSubmit={onSubmit} noValidate>
           <h2 id={titleId}>{text.title}</h2>
           <p className="pw-inspection__subtitle">{text.subtitle}</p>
+          <ol className="pw-inspection__steps" aria-label={text.stepsLabel}>
+            {text.steps.map((step) => <li key={step}>{step}</li>)}
+          </ol>
 
           <div className="pw-inspection__fields">
             <label className="pw-inspection__field">
@@ -291,6 +303,10 @@ export default function InspectionPreview({
             <CheckCircle2 aria-hidden="true" />
             {text.caption}
           </p>
+          <a className="pw-inspection__proof" href={GOOGLE_MAPS_URL.split("?")[0]} target="_blank" rel="noopener noreferrer">
+            <MapPin aria-hidden="true" />
+            {text.googleProof}
+          </a>
         </form>
       )}
     </aside>

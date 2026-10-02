@@ -4,11 +4,11 @@ import { GA_BOOTSTRAP_SCRIPT, GA_MEASUREMENT_ID } from "@/lib/analytics";
 export function GoogleAnalyticsHead() {
   return (
     <>
+      <script dangerouslySetInnerHTML={{ __html: GA_BOOTSTRAP_SCRIPT }} />
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
       />
-      <script dangerouslySetInnerHTML={{ __html: GA_BOOTSTRAP_SCRIPT }} />
     </>
   );
 }

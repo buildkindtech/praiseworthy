@@ -50,6 +50,8 @@ export default function Header() {
   const homeHref = locale === "en" ? "/" : `/${locale}/`;
   const guidesHref = locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const isHomePage = normalizePathname(pathname) === normalizePathname(homeHref);
+  const hasCityForm = ["/north-richland-hills", "/fort-worth"].includes(normalizePathname(pathname));
+  const requestHref = hasCityForm ? "#inspection-request-city" : `${isHomePage ? "" : homeHref}#inspection-request-hero`;
   const isOverlay = isHomePage && !scrolled && !open;
   const sectionHashes = [
     "#services",
@@ -154,9 +156,7 @@ export default function Header() {
             </a>
             <a
               className="pw-nav-cta"
-              href={SCHEDULE_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={requestHref}
             >
               <Calendar aria-hidden="true" />
               {t.common.freeInspection}

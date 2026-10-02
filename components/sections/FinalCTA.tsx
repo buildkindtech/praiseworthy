@@ -9,9 +9,6 @@ import { BUSINESS_EMAIL, BUSINESS_PHONE, withBasePath } from "@/lib/seo";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const PHONE_HREF = "tel:+16822500078";
-const SCHEDULE_HREF =
-  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01K4KNgIlF5_N0dcliaOX-17GpOsjDRKNjnDCZ_giIDfnAqaxLZY90DLEHQfXcTRKuNAtlZ1_v";
-
 export default function FinalCTA() {
   const { t, locale } = useLanguage();
 
@@ -30,14 +27,12 @@ export default function FinalCTA() {
 
             <div className="hero-ctas mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <LinkButton
-                href={SCHEDULE_HREF}
-                target="_blank"
-                rel="noreferrer"
+                href="#inspection-request-contact"
                 size="lg"
                 className="btn btn-gold btn-lg rounded-full border border-brand-orange/35 bg-brand-orange px-8 py-6 font-bold text-brand-navy shadow-[0_10px_30px_-10px_rgba(193,154,91,0.65)] hover:bg-brand-amber"
               >
                 <Calendar className="mr-2 h-5 w-5" aria-hidden="true" />
-                {t.common.scheduleOnline}
+                {t.common.freeInspection}
               </LinkButton>
               {locale === "zh" ? (
                 <WeChatQrButton

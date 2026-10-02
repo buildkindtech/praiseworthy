@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useMemo, useRef, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import { Calendar, MessageCircle, Phone, X } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -39,6 +39,7 @@ export default function ChatWidget() {
   const [error, setError] = useState<FieldError>("");
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
+  const submitBlocked = useRef(false);
   const attribution = useMemo(readAttribution, []);
 
   function validate(): FieldError {
@@ -50,6 +51,7 @@ export default function ChatWidget() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitBlocked.current) return;
     const nextError = validate();
     if (nextError) {
       setError(nextError);
@@ -57,6 +59,8 @@ export default function ChatWidget() {
     }
 
     setError("");
+    submitBlocked.current = true;
+    let completed = false;
     setSending(true);
 
     try {
@@ -78,7 +82,7 @@ export default function ChatWidget() {
       });
 
       const payload = (await response.json().catch(() => null)) as
-        | { ok?: boolean; error?: string }
+        | { ok?: boolean; accepted?: boolean; error?: string }
         | null;
 
       if (response.status === 429 || payload?.error === "rate_limited") {
@@ -86,17 +90,21 @@ export default function ChatWidget() {
         return;
       }
 
-      if (!response.ok || !payload?.ok) {
+      if (!response.ok || !payload?.ok || typeof payload.accepted !== "boolean") {
         setError("generic");
         return;
       }
 
-      trackEvent("generate_lead", { lead_source: "chat", need: "check" });
+      if (payload.accepted === true) {
+        trackEvent("generate_lead", { lead_source: "chat", need: "check" });
+      }
+      completed = true;
       setSuccess(true);
     } catch {
       setError("generic");
     } finally {
       setSending(false);
+      submitBlocked.current = completed;
     }
   }
 

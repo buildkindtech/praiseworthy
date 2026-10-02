@@ -188,6 +188,7 @@ record("API POST stays on /api/lead without outbound webhook on www, apex, and p
     assert(!res.location, `${host} API POST redirected to ${res.location}`);
     assert(res.status === 200, `${host} honeypot POST expected 200, got ${res.status} ${res.body}`);
     const json = JSON.parse(res.body);
+    assert(json.accepted === false, `${host} honeypot must not be an accepted lead`);
     assert(json.ok === true, `${host} unexpected API body ${res.body}`);
     assert(
       String(json.lead_id || "").startsWith("ignored_"),

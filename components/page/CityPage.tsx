@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobilePhoneButton from "@/components/layout/MobilePhoneButton";
 import ChatWidget from "@/components/layout/ChatWidget";
+import InspectionPreview from "@/components/inspection/InspectionPreview";
 import { LinkButton } from "@/components/ui/link-button";
 import type { CityPage as CityPageType } from "@/lib/city-pages";
 import { getCityPagePath, getCityPageUrl, getRelatedCityPages } from "@/lib/city-pages";
@@ -41,6 +42,7 @@ function matchesAreaLink(area: string, city: string) {
 
 export default function CityPage({ page }: { page: CityPageType }) {
   const relatedCities = getRelatedCityPages(page);
+  const hasRequestForm = ["north-richland-hills", "fort-worth"].includes(page.slug);
   const pageUrl = getCityPageUrl(page.slug);
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Home", item: `${SITE_URL}/` },
@@ -115,7 +117,7 @@ export default function CityPage({ page }: { page: CityPageType }) {
             <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/96 via-brand-navy/86 to-brand-navy/52" />
           </div>
 
-          <div className="relative mx-auto flex min-h-[72vh] max-w-7xl items-center px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+          <div className={`relative mx-auto min-h-[72vh] max-w-7xl items-center gap-10 px-4 pb-16 pt-32 sm:px-6 lg:px-8 ${hasRequestForm ? "grid lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)]" : "flex"}`}>
             <div className="max-w-3xl">
               <p className="mb-4 inline-flex rounded-full border border-brand-orange/26 bg-brand-orange/12 px-4 py-1.5 text-sm font-semibold text-brand-amber">
                 Roofing Services in {page.city}, TX
@@ -137,16 +139,18 @@ export default function CityPage({ page }: { page: CityPageType }) {
                   Call {BUSINESS_PHONE}
                 </LinkButton>
                 <LinkButton
-                  href={SCHEDULE_HREF}
-                  target="_blank"
-                  rel="noreferrer"
+                  href={hasRequestForm ? "#inspection-request-city" : "/#inspection-request-hero"}
                   size="lg"
                   className="rounded-full border border-brand-surface/55 bg-brand-surface px-8 py-7 text-lg font-semibold text-brand-navy shadow-[0_16px_34px_rgba(12,24,18,0.22)]"
                 >
                   <Calendar className="mr-2 h-5 w-5" />
-                  Schedule a Free Inspection
+                  Request a free inspection
                 </LinkButton>
               </div>
+              <p className="mb-6 max-w-2xl text-base leading-relaxed text-brand-surface/84">
+                Send a request. We’ll call to confirm your needs and arrange an onsite visit.
+                {" "}<a href={SCHEDULE_HREF} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Schedule a phone call</a> if you prefer.
+              </p>
 
               <nav aria-label={`${page.city} roofing quick links`} className="flex flex-wrap gap-3 text-sm font-medium text-brand-surface/82">
                 <Link href="/#services" className="underline-offset-4 hover:text-white hover:underline">
@@ -175,6 +179,7 @@ export default function CityPage({ page }: { page: CityPageType }) {
                 ))}
               </div>
             </div>
+            {hasRequestForm ? <InspectionPreview locale="en" instanceId="city" /> : null}
           </div>
         </section>
 

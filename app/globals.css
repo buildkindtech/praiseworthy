@@ -747,6 +747,30 @@
   font-size: 0.84rem;
 }
 
+.pw-inspection[id] { scroll-margin-top: 110px; }
+.pw-inspection__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--pw-gold-2);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  list-style: decimal;
+}
+.pw-inspection__proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: var(--pw-gold-2);
+  font-size: 0.78rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pw-inspection__proof svg { width: 15px; height: 15px; flex: none; }
+
 .pw-inspection__progress {
   height: 4px;
   margin-top: 14px;

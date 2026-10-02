@@ -69,7 +69,7 @@ async function forwardWebhook(leadId: string, data: LeadPayload) {
   const url = process.env.LEAD_WEBHOOK_URL?.trim();
   if (!url) {
     console.info(`Lead webhook skipped: LEAD_WEBHOOK_URL is not set (lead_id=${leadId})`);
-    return;
+    return false;
   }
 
   try {
@@ -89,9 +89,11 @@ async function forwardWebhook(leadId: string, data: LeadPayload) {
     if (!response.ok) {
       console.error(`Lead webhook failed: HTTP ${response.status} (lead_id=${leadId})`);
     }
+    return response.ok;
   } catch (error) {
     const reason = error instanceof Error ? error.name : "unknown";
     console.error(`Lead webhook error: ${reason} (lead_id=${leadId})`);
+    return false;
   }
 }
 
@@ -119,9 +121,13 @@ export async function POST(request: Request) {
 
   const leadId = result.honeypot ? `ignored_${randomUUID()}` : `pw_${randomUUID()}`;
 
-  if (!result.honeypot) {
-    await forwardWebhook(leadId, result.data);
+  if (result.honeypot) {
+    return NextResponse.json({ ok: true, accepted: false, lead_id: leadId });
   }
 
-  return NextResponse.json({ ok: true, lead_id: leadId });
+  if (!(await forwardWebhook(leadId, result.data))) {
+    return NextResponse.json({ ok: false, error: "delivery_failed" }, { status: 503 });
+  }
+
+  return NextResponse.json({ ok: true, accepted: true, lead_id: leadId });
 }

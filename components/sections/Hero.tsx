@@ -9,8 +9,6 @@ import { withBasePath } from "@/lib/seo";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const PHONE_HREF = "tel:+16822500078";
-const SCHEDULE_HREF =
-  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01K4KNgIlF5_N0dcliaOX-17GpOsjDRKNjnDCZ_giIDfnAqaxLZY90DLEHQfXcTRKuNAtlZ1_v";
 
 const notes = {
   en: "Free initial inspection · No obligation · Local DFW service",
@@ -71,12 +69,10 @@ export default function Hero() {
             <div className="pw-hero__actions">
               <a
                 className="pw-button pw-button--gold"
-                href={SCHEDULE_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#inspection-request-hero"
               >
                 <Calendar aria-hidden="true" />
-                {t.common.scheduleOnline}
+                {t.common.freeInspection}
               </a>
               <a className="pw-button pw-button--ghost" href={PHONE_HREF}>
                 <Phone aria-hidden="true" />
@@ -85,7 +81,7 @@ export default function Hero() {
             </div>
 
             <nav className="pw-hero__links" aria-label="Roofing service links">
-              <a href="#services">{t.common.freeInspection}</a>
+              <a href="#services">{t.nav[0]}</a>
               <a href="#service-area">DFW {t.nav[4]}</a>
               <Link href={guidesHref}>{t.header.guidesLabel}</Link>
             </nav>
