@@ -3,6 +3,7 @@ import { Fraunces, Manrope } from "next/font/google";
 import "@/app/globals.css";
 import { ContactClickTracker } from "@/components/analytics/ContactClickTracker";
 import { GoogleAnalyticsHead } from "@/components/analytics/GoogleAnalytics";
+import { MetaPixelHead } from "@/components/analytics/MetaPixel";
 import { localeMeta } from "@/lib/seo-i18n";
 import {
   createRoofingContractorSchema,
@@ -39,6 +40,7 @@ export default function DefaultRootLayout({
     >
       <head>
         <GoogleAnalyticsHead />
+        <MetaPixelHead />
       </head>
       <body id="top" className="font-sans antialiased">
         <ContactClickTracker />
