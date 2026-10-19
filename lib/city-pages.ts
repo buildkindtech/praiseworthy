@@ -48,7 +48,7 @@ export const cityPages: CityPage[] = [
       "free roof inspection Fort Worth",
     ],
     intro:
-      "If you are searching for a roofing contractor in Fort Worth after hail, heavy rain, or wind, this page is designed to answer the most common homeowner questions before a small issue turns into a major repair.",
+      "If you are searching for a roofing contractor in Fort Worth after hail, heavy rain, or wind, this page answers the most common homeowner questions before a small issue turns into a major repair.",
     body: [
       "Praise Worthy works with homeowners in Fort Worth who need a fast and honest roof inspection after storms. We check for missing shingles, lifted edges, granule loss, flashing damage, soft spots, and visible leak risk so you have a clearer picture of the roof condition before making a decision.",
       "Fort Worth homes can take a beating during storm season, especially when hail and high winds affect multiple neighborhoods at once. A local inspection helps determine whether the roof needs simple monitoring, targeted repair, or a larger replacement plan backed by clear photo documentation.",
@@ -288,7 +288,7 @@ export const cityPages: CityPage[] = [
       "free roof inspection Hurst",
     ],
     intro:
-      "Hurst homeowners often need clear answers after a storm. This page is built to help you understand what a local roof inspection should cover and why early action matters.",
+      "Hurst homeowners often need clear answers after a storm. Here is what a local roof inspection should cover and why early action matters.",
     body: [
       "Praise Worthy inspects Hurst roofs for hail strikes, wind-lifted shingles, flashing wear, soft spots, and early leak risk. A local inspection helps homeowners understand whether the roof needs monitoring, repair planning, or a larger replacement conversation.",
       "Because Hurst sits in the same Mid-Cities weather path as Bedford, Euless, and North Richland Hills, roof damage can spread across neighborhoods quickly after a severe storm. Damage that looks minor from the yard can still shorten roof life or create hidden water intrusion points.",
@@ -341,7 +341,7 @@ export const cityPages: CityPage[] = [
     body: [
       "Praise Worthy provides free roof inspections for homeowners in North Richland Hills who want to check for hail damage, wind damage, missing shingles, flashing wear, and early leak risk. That is often the best first step after a storm passes through the area.",
       "Because North Richland Hills homes experience the same DFW weather pressure as nearby communities, roof damage can show up in subtle ways first. A local inspection helps identify those early signs before they grow into interior damage or larger repair costs.",
-      "Our approach is simple: inspect the roof carefully, document visible issues, explain the findings clearly, and help homeowners understand what to do next. That makes it easier to move forward with confidence instead of guessing.",
+      "Our approach is simple: inspect the roof carefully, document visible issues, explain the findings clearly, and help homeowners understand what to do next. That way you are deciding based on what is actually on the roof, not guessing.",
     ],
     serviceBullets: [
       "Free roof inspections in North Richland Hills",
@@ -580,8 +580,8 @@ export const cityPages: CityPage[] = [
       "Southlake homeowners often want a roofing company that can inspect carefully, communicate clearly, and respect the details that matter on higher-end homes. That starts with a strong inspection.",
     body: [
       "Praise Worthy inspects Southlake roofs for hail impact, wind damage, flashing issues, shingle wear, and visible drainage-related trouble spots. A clear inspection helps homeowners understand whether the roof needs repair planning, replacement, or simple monitoring.",
-      "Southlake homes often feature larger rooflines and premium materials, which makes accurate storm-damage documentation even more important. Damage that appears minor at first can still affect roof performance and long-term protection.",
-      "Our approach stays inspection first and homeowner focused. We document findings, explain them in plain language, and help Southlake homeowners move forward with confidence.",
+      "Southlake homes often have larger rooflines and higher-end materials, which makes accurate storm-damage documentation even more important. Damage that appears minor at first can still affect roof performance and long-term protection.",
+      "Our approach stays inspection first and homeowner focused. We document findings, explain them in plain language, and help Southlake homeowners decide what to do next.",
     ],
     serviceBullets: [
       "Free roof inspections in Southlake",
@@ -629,7 +629,7 @@ export const cityPages: CityPage[] = [
     body: [
       "Praise Worthy inspects Carrollton roofs for hail marks, missing shingles, lifted edges, flashing problems, drainage concerns, and early leak indicators. That gives homeowners a better understanding of roof condition before they commit to repairs or replacement.",
       "Carrollton homes can be affected by the same fast-moving North Texas storm systems that impact nearby suburbs. After those events, roof damage may stay hidden for weeks unless someone checks the roof closely.",
-      "Our inspection process is designed to be simple and useful. We document findings, explain what we see in plain language, and help Carrollton homeowners move forward with confidence.",
+      "Our inspection process is simple and useful. We document findings, explain what we see in plain language, and help Carrollton homeowners decide what to do next.",
     ],
     serviceBullets: [
       "Free roof inspections in Carrollton",
@@ -821,7 +821,7 @@ export const cityPages: CityPage[] = [
     body: [
       "Praise Worthy inspects Richardson roofs for hail strikes, wind-lifted materials, flashing wear, drainage problems, and visible leak-risk areas. That helps homeowners understand whether the roof needs monitoring, repairs, or replacement planning.",
       "Because Richardson homes can be hit by the same fast-moving North Texas storm systems as Plano and Carrollton, roof damage may stay hidden until it becomes a leak or interior repair issue.",
-      "Our process stays straightforward. We document what we find, explain it in clear language, and help Richardson homeowners make a confident next-step decision.",
+      "Our process stays straightforward. We document what we find, explain it in clear language, and help Richardson homeowners decide what to do next.",
     ],
     serviceBullets: [
       "Free roof inspections in Richardson",
