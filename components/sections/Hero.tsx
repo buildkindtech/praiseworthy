@@ -46,8 +46,8 @@ export default function Hero() {
       <section className="pw-hero" aria-labelledby="home-hero-title">
         <div className="pw-hero__media">
           <Image
-            src={withBasePath("/images/brand/hero-truck-home.webp")}
-            alt="Praise Worthy roofing inspection truck parked outside a DFW home"
+            src={withBasePath("/images/real/hero-roof-inspection.webp")}
+            alt={t.images.heroRoofAlt}
             fill
             priority
             sizes="100vw"

@@ -40,8 +40,8 @@ export default function InsuranceGuide() {
 
           <figure className="relative min-h-[380px] overflow-hidden rounded-[20px] shadow-[0_30px_70px_-24px_rgba(8,24,16,0.35)] sm:min-h-[520px]">
             <Image
-              src={withBasePath("/images/brand/embroidered-shirt.webp")}
-              alt={t.images.shirtAlt}
+              src={withBasePath("/images/real/storm-damage-ridge.webp")}
+              alt={t.images.insuranceAlt}
               fill
               sizes="(min-width: 1024px) 46vw, 100vw"
               className="object-cover object-center"

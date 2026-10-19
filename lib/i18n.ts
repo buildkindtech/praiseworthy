@@ -68,7 +68,7 @@ export const translations = {
       errorPhone: "Enter a valid phone number.",
       errorZip: "Enter a valid ZIP code.",
       errorGeneric: "Something went wrong. Call us at 682-250-0078.",
-      errorRate: "Please wait a moment, then try again — or call 682-250-0078.",
+      errorRate: "Please wait a moment and try again, or call 682-250-0078.",
     },
     leadForm: {
       stepsLabel: "How your inspection request works",
@@ -103,7 +103,7 @@ export const translations = {
       errorZip: "Enter a valid ZIP code.",
       errorNeed: "Please choose what you need.",
       errorGeneric: "Something went wrong. Call us at 682-250-0078 and we'll help right away.",
-      errorRate: "Please wait a moment, then try again — or call 682-250-0078.",
+      errorRate: "Please wait a moment and try again, or call 682-250-0078.",
     },
     images: {
       heroAlt: "Praise Worthy truck and founder in front of a premium Texas home",
@@ -111,6 +111,10 @@ export const translations = {
       signAlt: "Praise Worthy branded yard sign",
       truckAlt: "Praise Worthy service truck wrap",
       shirtAlt: "Praise Worthy embroidered shirt detail",
+      heroRoofAlt: "Brown shingle roof with a strip of shingles blown off and underlayment exposed near the ridge, trees and a neighboring gable behind it",
+      inspectionAlt: "Inspector's hand lifting a torn shingle to show the exposed underlayment beneath it",
+      insuranceAlt: "Wind-lifted shingles and exposed underlayment along a roof ridge next to two pipe vents",
+      ctaAlt: "Close-up of worn gray asphalt shingles with patches of granule loss",
     },
     hero: {
       badge: "Serving North Richland Hills & DFW",
@@ -131,13 +135,13 @@ export const translations = {
       cards: [
         { title: "Hidden Storm Damage", desc: "Storm damage isn't always visible from the ground. A professional inspection can identify hidden damage before it leads to costly repairs." },
         { title: "Small Cracks, Big Problems", desc: "Even small cracks in shingles can lead to leaks, mold, and costly structural damage. Don't ignore what you can't see." },
-        { title: "Prevention Saves Money", desc: "A quick roof inspection today can prevent expensive repairs later. Early detection is the key to protecting your home." },
+        { title: "Prevention Saves Money", desc: "A quick roof inspection today can prevent expensive repairs later. Finding damage early is cheaper than finding a leak." },
       ],
     },
     inspection: {
       badge: "Free, No Obligation",
       titleLine1: "Free Roof Inspection",
-      titleHighlight: "Built for Homeowners",
+      titleHighlight: "for DFW Homeowners",
       description: "We inspect for storm, hail, and age-related damage, then walk you through a clear report so you know exactly what your roof needs and what it does not.",
       items: ["Hail damage", "Storm damage", "Shingle cracks", "Potential leaks"],
       itemDescriptions: [
@@ -164,23 +168,31 @@ export const translations = {
     },
     why: {
       titlePrefix: "Why Homeowners Choose",
-      description: "We earn your trust through honest work, clear communication, and dependable service.",
+      description: "Here is what you can expect when we come out to look at your roof.",
       cards: [
         { title: "Local to DFW", desc: "Proudly serving North Richland Hills and nearby communities. We're your neighbors, not an out-of-town crew." },
-        { title: "Honest Inspections", desc: "Transparent assessments with no pressure tactics. We tell you what we find, nothing more and nothing less." },
-        { title: "Storm Damage Experience", desc: "Extensive hands-on experience with storm and hail damage roofs across the DFW metroplex." },
+        { title: "Honest Inspections", desc: "No pressure and no sales script. We tell you what we found on your roof, nothing more and nothing less." },
+        { title: "Storm Damage Experience", desc: "We inspect and work on storm and hail damaged roofs across the DFW metroplex." },
         { title: "Clear Communication", desc: "You'll always know what's happening next. We keep homeowners informed from first visit to final walkthrough." },
       ],
     },
     beforeAfter: {
-      title: "Recent Roof Projects in DFW",
-      description: "Drag the slider to see the transformation. Real projects from neighborhoods we serve.",
+      title: "Recent Roof Inspections in DFW",
+      description: "Photos our team took on the roof during recent inspections. Nothing staged and nothing from a stock library.",
       before: "Before",
       after: "After",
+      photos: [
+        { caption: "Shingles torn off near the ridge, underlayment exposed", alt: "Brown asphalt shingle roof with a strip of shingles missing near the ridge, exposing gray underlayment, with a pipe vent at the top", when: "April 2026" },
+        { caption: "Lifting a shingle edge by hand to check the seal", alt: "Hand lifting the edge of a brown asphalt shingle to show that the seal strip has released", when: "April 2026" },
+        { caption: "Worn shingles with granule loss", alt: "Close-up of gray asphalt shingles with worn patches and granule loss", when: "March 2026" },
+        { caption: "Vent and wall flashing check on a roof in good shape", alt: "Gray asphalt shingle roof with a low-profile vent beside a tan siding wall", when: "March 2026" },
+        { caption: "Pipe vent collar and screen check", alt: "Brown metal pipe vent collar with a wire screen on a tan asphalt shingle roof", when: "April 2026" },
+        { caption: "Replacing a damaged section along the ridge", alt: "Replacement shingle strip and a caulk gun laid on a brown shingle roof next to a vent during a repair", when: "April 2026" },
+      ],
     },
     testimonials: {
       title: "What Homeowners Say About Us",
-      description: "Trusted by homeowners across the DFW metroplex",
+      description: "Reviews from homeowners in North Richland Hills and nearby cities.",
       reviews: [
         "Praise Worthy replaced our roof after a hail storm. Very professional and easy to work with. They handled everything and kept us informed throughout the process.",
         "I wasn't sure if our roof had storm damage. They came out, did a thorough inspection, and found damage we couldn't see from the ground. Honest and reliable team.",
@@ -193,14 +205,14 @@ export const translations = {
     serviceArea: {
       badge: "DFW Metroplex",
       title: "Serving Homeowners Across DFW",
-      description: "We provide free roof inspections and quality roofing services throughout the Dallas-Fort Worth area.",
+      description: "Free roof inspections and roofing work for homeowners across the Dallas-Fort Worth area.",
       mapDescription: "The city cards show the areas we serve. The map highlights the actual Praise Worthy Google Business profile.",
       mapCta: "View Praise Worthy on Google Maps",
     },
     faq: {
       titleLine1: "Common Questions About",
       titleLine2: "Roof Inspections",
-      description: "Everything you need to know before scheduling your free inspection.",
+      description: "The questions we hear most before an inspection, answered plainly.",
       items: [
         ["How long does a roof inspection take?", "Most inspections take 30-45 minutes. We'll provide a detailed report of our findings, including photos of any damage we discover."],
         ["Is the roof inspection really free?", "Yes. Our initial inspection is completely free with no obligation. Homeowners deserve to know the condition of their roof, especially after a storm."],
@@ -306,6 +318,10 @@ export const translations = {
       signAlt: "Letrero de jardin con la marca Praise Worthy",
       truckAlt: "Camioneta de servicio de Praise Worthy con rotulacion de marca",
       shirtAlt: "Detalle bordado de la camisa de Praise Worthy",
+      heroRoofAlt: "Techo de tejas marrones con una franja de tejas arrancadas y la base expuesta cerca de la cumbrera, con árboles y una casa vecina al fondo",
+      inspectionAlt: "Mano del inspector levantando una teja rota para mostrar la base expuesta debajo",
+      insuranceAlt: "Tejas levantadas por el viento y base expuesta a lo largo de la cumbrera junto a dos ventilaciones de tubo",
+      ctaAlt: "Primer plano de tejas asfálticas grises desgastadas con zonas de pérdida de gránulo",
     },
     hero: {
       badge: "Atendemos North Richland Hills y todo DFW",
@@ -325,13 +341,13 @@ export const translations = {
       cards: [
         { title: "Danos ocultos por tormenta", desc: "No todos los danos se notan desde la calle. Una revision profesional detecta problemas antes de que se vuelvan una reparacion costosa." },
         { title: "Pequenas grietas, problemas enormes", desc: "Una fisura pequena puede abrir la puerta a filtraciones, moho y dano estructural. Lo que no se ve tambien cuenta." },
-        { title: "Prevenir sale mas barato", desc: "Inspeccionar hoy puede evitar gastos mucho mayores mas adelante. Detectar a tiempo siempre juega a tu favor." },
+        { title: "Prevenir sale mas barato", desc: "Inspeccionar hoy puede evitar gastos mucho mayores mas adelante. Encontrar el dano a tiempo sale mas barato que encontrar una gotera." },
       ],
     },
     inspection: {
       badge: "Gratis y sin compromiso",
       titleLine1: "Inspección de techo gratis",
-      titleHighlight: "para propietarios",
+      titleHighlight: "para propietarios de DFW",
       description: "Nuestro equipo revisa tu techo a detalle para encontrar daños por tormenta, granizo o desgaste. Recibirás un reporte claro, honesto y sin costo.",
       items: ["Daños por granizo", "Daños por tormenta", "Grietas en tejas", "Posibles filtraciones"],
       itemDescriptions: [
@@ -358,16 +374,29 @@ export const translations = {
     },
     why: {
       titlePrefix: "Por que los propietarios eligen a",
-      description: "Ganamos confianza con trabajo honesto, comunicacion clara y servicio que responde cuando se necesita.",
+      description: "Esto es lo que puedes esperar cuando vamos a revisar tu techo.",
       cards: [
         { title: "Locales en DFW", desc: "Atendemos North Richland Hills y comunidades cercanas. No somos una cuadrilla que aparece y desaparece." },
-        { title: "Inspecciones honestas", desc: "Evaluaciones transparentes, sin presion ni ventas agresivas. Te decimos exactamente lo que vemos." },
-        { title: "Experiencia en tormentas", desc: "Tenemos experiencia real resolviendo danos por granizo y tormenta en toda el area de DFW." },
+        { title: "Inspecciones honestas", desc: "Sin presion y sin discurso de ventas. Te decimos lo que encontramos en tu techo, ni mas ni menos." },
+        { title: "Experiencia en tormentas", desc: "Inspeccionamos y trabajamos en techos con danos por granizo y tormenta en toda el area de DFW." },
         { title: "Comunicacion clara", desc: "Desde la primera visita hasta el cierre, sabras que sigue y por que." },
       ],
     },
-    beforeAfter: { title: "Proyectos recientes de techos en DFW", description: "Mueve el control para ver el cambio. Son proyectos reales de zonas donde trabajamos.", before: "Antes", after: "Despues" },
-    testimonials: { title: "Lo que dicen los propietarios", description: "La confianza de propietarios en todo el area de DFW", reviews: [
+    beforeAfter: {
+      title: "Inspecciones recientes de techos en DFW",
+      description: "Fotos que nuestro equipo tomó sobre el techo durante inspecciones recientes. Nada montado y nada de banco de imágenes.",
+      before: "Antes",
+      after: "Despues",
+      photos: [
+        { caption: "Tejas arrancadas cerca de la cumbrera, base expuesta", alt: "Techo de tejas asfálticas marrones con una franja de tejas faltantes cerca de la cumbrera que deja ver la base gris, con una ventilación de tubo arriba", when: "Abril 2026" },
+        { caption: "Levantando el borde de una teja a mano para revisar el sellado", alt: "Mano levantando el borde de una teja asfáltica marrón para mostrar que la tira de sellado se soltó", when: "Abril 2026" },
+        { caption: "Tejas desgastadas con pérdida de gránulo", alt: "Primer plano de tejas asfálticas grises con zonas desgastadas y pérdida de gránulo", when: "Marzo 2026" },
+        { caption: "Revisión de ventilación y tapajuntas de pared en un techo en buen estado", alt: "Techo de tejas asfálticas grises con una ventilación de perfil bajo junto a una pared de revestimiento beige", when: "Marzo 2026" },
+        { caption: "Revisión del collarín y la malla de una ventilación de tubo", alt: "Collarín metálico marrón de ventilación con malla de alambre sobre un techo de tejas asfálticas beige", when: "Abril 2026" },
+        { caption: "Reemplazo de una sección dañada a lo largo de la cumbrera", alt: "Tira de teja de reemplazo y una pistola de sellador sobre un techo de tejas marrones junto a una ventilación durante una reparación", when: "Abril 2026" },
+      ],
+    },
+    testimonials: { title: "Lo que dicen los propietarios", description: "Resenas de propietarios en North Richland Hills y ciudades cercanas.", reviews: [
       "Praise Worthy reemplazo nuestro techo despues de una granizada. Fueron profesionales, atentos y nos mantuvieron informados en cada paso.",
       "No estabamos seguros de si habia dano en el techo. Vinieron, hicieron una inspeccion completa y encontraron problemas que no se veian desde abajo.",
       "Desde la inspeccion inicial hasta la revision final, la comunicacion fue excelente. Incluso trabajaron muy bien con el ajustador del seguro.",
@@ -375,8 +404,8 @@ export const translations = {
       "Despues de la tormenta de la primavera pasada, respondieron rapido y programaron la inspeccion enseguida. El equipo fue puntual y profesional.",
       "Nos dieron un reporte detallado con fotos y explicaciones muy claras. Nunca sentimos presion. Ha sido la mejor experiencia que hemos tenido con techos.",
     ] },
-    serviceArea: { badge: "Area metropolitana de DFW", title: "Atendemos propietarios en todo DFW", description: "Ofrecemos inspecciones gratis y servicios de techos de calidad en toda el area de Dallas-Fort Worth.", mapDescription: "Las tarjetas muestran las zonas que atendemos. El mapa destaca el perfil real de Google Business de Praise Worthy.", mapCta: "Ver Praise Worthy en Google Maps" },
-    faq: { titleLine1: "Preguntas frecuentes sobre", titleLine2: "inspecciones de techo", description: "Todo lo que necesitas saber antes de agendar tu inspeccion gratuita.", items: [
+    serviceArea: { badge: "Area metropolitana de DFW", title: "Atendemos propietarios en todo DFW", description: "Inspecciones de techo gratis y trabajos de techado para propietarios en toda el area de Dallas-Fort Worth.", mapDescription: "Las tarjetas muestran las zonas que atendemos. El mapa destaca el perfil real de Google Business de Praise Worthy.", mapCta: "Ver Praise Worthy en Google Maps" },
+    faq: { titleLine1: "Preguntas frecuentes sobre", titleLine2: "inspecciones de techo", description: "Las preguntas que mas nos hacen antes de una inspeccion, respondidas sin rodeos.", items: [
       ["Cuanto tarda una inspeccion de techo?", "La mayoria de las inspecciones tarda entre 30 y 45 minutos. Te entregamos un reporte con fotos y hallazgos claros."],
       ["De verdad la inspeccion es gratis?", "Si. La inspeccion inicial no tiene costo ni compromiso. Queremos que sepas en que estado esta tu techo."],
       ["Como se si mi techo tiene dano por tormenta?", "El dano por granizo o viento no siempre se ve desde abajo. Senales comunes son canaletas golpeadas, perdida de granulo, tejas quebradas o sueltas."],
@@ -465,6 +494,10 @@ export const translations = {
       signAlt: "Praise Worthy 品牌庭院招牌",
       truckAlt: "Praise Worthy 服务卡车车身形象",
       shirtAlt: "Praise Worthy 品牌刺绣工服细节",
+      heroRoofAlt: "棕色沥青瓦屋顶，屋脊附近一条瓦片被风掀走、露出底层防水垫，背景是树木和邻居的山墙",
+      inspectionAlt: "检查人员用手掀起一块破损的瓦片，露出下方的防水垫",
+      insuranceAlt: "屋脊沿线被风掀起的瓦片和裸露的防水垫，旁边有两个管道通风口",
+      ctaAlt: "灰色沥青瓦特写，多处磨损并出现颗粒脱落",
     },
     hero: {
       badge: "服务 North Richland Hills 及整个 DFW",
@@ -484,13 +517,13 @@ export const translations = {
       cards: [
         { title: "隐藏的风暴损伤", desc: "从地面看似正常，不代表屋顶没问题。专业检查能在问题扩大前及时发现异常。" },
         { title: "小裂缝也会变成大麻烦", desc: "屋顶材料上的细小裂纹，可能逐渐演变成漏水、霉变甚至结构损害。" },
-        { title: "越早发现，越能省钱", desc: "及早检查通常能避免后期高额维修，保护房屋也更安心。" },
+        { title: "越早发现，越能省钱", desc: "及早检查通常能避免后期高额维修。早一点发现损伤，总比发现漏水后再处理便宜。" },
       ],
     },
     inspection: {
       badge: "免费且无任何压力",
       titleLine1: "免费屋顶检查",
-      titleHighlight: "专为业主提供",
+      titleHighlight: "为 DFW 业主提供",
       description: "我们会仔细检查屋顶是否有风暴、冰雹或老化造成的损伤，并提供清楚易懂的检查结果，全程免费。",
       items: ["冰雹损伤", "风暴损伤", "瓦片裂缝", "潜在漏水点"],
       itemDescriptions: [
@@ -517,16 +550,29 @@ export const translations = {
     },
     why: {
       titlePrefix: "为什么很多业主选择",
-      description: "我们靠诚实、专业和沟通透明赢得信任，而不是靠夸张承诺。",
+      description: "我们上门查看屋顶时，您可以期待的是：",
       cards: [
-        { title: "真正服务 DFW 本地", desc: "我们长期服务 North Richland Hills 及周边社区，不是风暴来了才出现的外地团队。" },
-        { title: "检查透明诚实", desc: "没有强推，没有夸大，只把真实情况清楚告诉你。" },
-        { title: "熟悉风暴损伤处理", desc: "在 DFW 地区处理冰雹和暴风雨屋顶问题经验丰富，知道该看什么、怎么判断。" },
+        { title: "真正服务 DFW 本地", desc: "我们服务 North Richland Hills 及周边社区，不是风暴来了才出现的外地团队。" },
+        { title: "检查透明诚实", desc: "不施压，不推销。我们只把在您屋顶上看到的情况如实告诉您，不多也不少。" },
+        { title: "熟悉风暴损伤处理", desc: "我们在整个 DFW 地区检查并处理遭受风暴和冰雹损伤的屋顶。" },
         { title: "沟通清楚省心", desc: "从首次上门到最后说明，你都能清楚知道进展和下一步。" },
       ],
     },
-    beforeAfter: { title: "DFW 最近屋顶项目案例", description: "拖动滑块查看前后变化，都是我们服务区域内的真实案例风格展示。", before: "施工前", after: "施工后" },
-    testimonials: { title: "业主怎么评价我们", description: "DFW 多地业主的真实认可", reviews: [
+    beforeAfter: {
+      title: "DFW 最近的屋顶检查记录",
+      description: "这些照片都是我们团队在最近的检查中在屋顶上拍摄的，没有摆拍，也不是图库图片。",
+      before: "施工前",
+      after: "施工后",
+      photos: [
+        { caption: "屋脊附近瓦片被掀走，防水垫裸露", alt: "棕色沥青瓦屋顶，屋脊附近缺失一条瓦片、露出灰色防水垫，上方有一个管道通风口", when: "2026年4月" },
+        { caption: "用手掀起瓦片边缘检查密封条", alt: "一只手掀起棕色沥青瓦的边缘，显示密封条已经脱开", when: "2026年4月" },
+        { caption: "磨损并出现颗粒脱落的瓦片", alt: "灰色沥青瓦特写，多处磨损并出现颗粒脱落", when: "2026年3月" },
+        { caption: "状况良好的屋顶上检查通风口和墙面泛水", alt: "灰色沥青瓦屋顶，一个低矮通风口紧邻米色墙板", when: "2026年3月" },
+        { caption: "检查管道通风口的套环和防护网", alt: "米色沥青瓦屋顶上带铁丝网的棕色金属管道通风口套环", when: "2026年4月" },
+        { caption: "更换屋脊沿线受损的一段", alt: "维修时放在棕色瓦屋顶上、通风口旁的替换瓦条和填缝枪", when: "2026年4月" },
+      ],
+    },
+    testimonials: { title: "业主怎么评价我们", description: "来自 North Richland Hills 及周边城市业主的评价。", reviews: [
       "冰雹过后，Praise Worthy 帮我们更换了屋顶。整个过程专业、省心，而且沟通一直很及时。",
       "我们原本不确定屋顶有没有受损，他们检查得很仔细，找出了地面根本看不到的问题。",
       "从第一次检查到最后确认，沟通都非常顺畅，还能和保险理赔员现场配合，省了很多麻烦。",
@@ -534,8 +580,8 @@ export const translations = {
       "去年春天那场大风暴后，他们响应很快，预约也快，团队专业而且按时完成工作。",
       "他们给了我们带照片的详细报告，解释得很清楚，也没有任何强迫感，是我们遇到过最安心的一次屋顶服务体验。",
     ] },
-    serviceArea: { badge: "DFW 都会区", title: "服务整个 DFW 的业主", description: "我们在 Dallas-Fort Worth 区域提供免费屋顶检查和高质量屋顶服务。", mapDescription: "左侧城市卡片展示我们的服务区域，地图显示的是 Praise Worthy 的实际 Google 商家页面。", mapCta: "在 Google 地图查看 Praise Worthy" },
-    faq: { titleLine1: "关于屋顶检查的", titleLine2: "常见问题", description: "在预约免费检查之前，你最关心的问题，这里先帮你说清楚。", items: [
+    serviceArea: { badge: "DFW 都会区", title: "服务整个 DFW 的业主", description: "为 Dallas-Fort Worth 地区的业主提供免费屋顶检查和屋顶施工服务。", mapDescription: "左侧城市卡片展示我们的服务区域，地图显示的是 Praise Worthy 的实际 Google 商家页面。", mapCta: "在 Google 地图查看 Praise Worthy" },
+    faq: { titleLine1: "关于屋顶检查的", titleLine2: "常见问题", description: "检查前业主最常问的问题，这里直接回答。", items: [
       ["一次屋顶检查通常要多久？", "大多数检查大约需要 30 到 45 分钟。我们会提供包含照片和结论的详细报告。"],
       ["检查真的完全免费吗？", "是的。首次检查完全免费，也没有强制后续合作。我们希望你先弄清屋顶真实状况。"],
       ["我怎么判断屋顶有没有风暴损伤？", "冰雹和大风损伤很多时候从地面看不出来。常见迹象包括排水沟凹陷、瓦片颗粒脱落、裂缝或瓦片缺失。"],
@@ -624,6 +670,10 @@ export const translations = {
       signAlt: "Praise Worthy 브랜드 야드사인",
       truckAlt: "Praise Worthy 서비스 트럭 래핑 이미지",
       shirtAlt: "Praise Worthy 자수 로고가 들어간 셔츠 디테일",
+      heroRoofAlt: "용마루 근처 슁글 한 줄이 바람에 벗겨져 방수 시트가 드러난 갈색 슁글 지붕, 뒤로 나무와 옆집 박공이 보임",
+      inspectionAlt: "점검자가 찢어진 슁글을 손으로 들어 올려 아래 방수 시트를 보여주는 모습",
+      insuranceAlt: "용마루를 따라 바람에 들린 슁글과 드러난 방수 시트, 옆에 파이프 환기구 두 개",
+      ctaAlt: "입자가 떨어져 나간 회색 아스팔트 슁글 클로즈업",
     },
     hero: {
       badge: "North Richland Hills 및 DFW 전역 서비스",
@@ -643,13 +693,13 @@ export const translations = {
       cards: [
         { title: "겉으로 안 보이는 폭풍 피해", desc: "지상에서 멀쩡해 보여도 안심할 수 없습니다. 전문 점검으로 숨어 있는 손상을 먼저 찾아야 합니다." },
         { title: "작은 균열이 큰 수리로 번집니다", desc: "작은 균열이나 손상도 시간이 지나면 누수, 곰팡이, 구조 문제로 이어질 수 있습니다." },
-        { title: "미리 점검할수록 비용을 아낄 수 있습니다", desc: "초기에 발견하면 더 큰 수리비를 막을 수 있고, 집도 더 안전하게 지킬 수 있습니다." },
+        { title: "미리 점검할수록 비용을 아낄 수 있습니다", desc: "초기에 발견하면 더 큰 수리비를 막을 수 있습니다. 누수가 생긴 뒤 찾는 것보다 미리 찾는 편이 훨씬 저렴합니다." },
       ],
     },
     inspection: {
       badge: "무료, 부담 없는 점검",
       titleLine1: "무료 지붕 점검",
-      titleHighlight: "주택 소유주를 위한 서비스",
+      titleHighlight: "DFW 주택 소유주를 위해",
       description: "전문가가 지붕을 꼼꼼히 살펴 우박, 폭풍, 노후로 인한 손상을 확인해드립니다. 결과는 이해하기 쉬운 보고서로 무료로 안내해드립니다.",
       items: ["우박 피해", "폭풍 피해", "슁글 균열", "누수 가능 지점"],
       itemDescriptions: [
@@ -676,16 +726,29 @@ export const translations = {
     },
     why: {
       titlePrefix: "많은 주택 소유주가",
-      description: "정직한 점검, 분명한 설명, 믿을 수 있는 대응으로 신뢰를 얻습니다.",
+      description: "저희가 지붕을 보러 갈 때 기대하실 수 있는 것은 다음과 같습니다.",
       cards: [
-        { title: "DFW 지역 밀착 서비스", desc: "North Richland Hills와 인근 지역을 꾸준히 서비스하는 지역 업체입니다. 잠깐 왔다 사라지는 외부 팀이 아닙니다." },
-        { title: "정직한 점검", desc: "과장 없이, 불필요한 압박 없이 실제 상태만 솔직하게 안내합니다." },
-        { title: "폭풍 피해 경험", desc: "DFW 지역의 우박과 폭풍 피해 지붕을 다뤄온 현장 경험이 풍부합니다." },
+        { title: "DFW 지역 밀착 서비스", desc: "North Richland Hills와 인근 지역을 서비스하는 지역 업체입니다. 잠깐 왔다 사라지는 외부 팀이 아닙니다." },
+        { title: "정직한 점검", desc: "압박도 영업 멘트도 없습니다. 지붕에서 확인한 것만 그대로, 더하지도 빼지도 않고 말씀드립니다." },
+        { title: "폭풍 피해 경험", desc: "DFW 전역에서 폭풍과 우박 피해를 입은 지붕을 점검하고 작업합니다." },
         { title: "쉬운 소통", desc: "처음 방문부터 마무리까지 진행 상황을 이해하기 쉽게 설명해 드립니다." },
       ],
     },
-    beforeAfter: { title: "DFW 최근 지붕 시공 사례", description: "슬라이더를 움직여 변화를 확인해 보세요. 저희가 서비스하는 지역의 실제 사례 분위기를 담았습니다.", before: "시공 전", after: "시공 후" },
-    testimonials: { title: "고객들이 남긴 이야기", description: "DFW 지역 주택 소유주들이 믿고 추천하는 이유", reviews: [
+    beforeAfter: {
+      title: "DFW 최근 지붕 점검 사례",
+      description: "최근 점검 중 저희 팀이 지붕 위에서 직접 찍은 사진입니다. 연출도, 스톡 이미지도 없습니다.",
+      before: "시공 전",
+      after: "시공 후",
+      photos: [
+        { caption: "용마루 근처 슁글이 떨어져 나가 방수 시트가 드러남", alt: "용마루 근처 슁글 한 줄이 사라져 회색 방수 시트가 드러난 갈색 아스팔트 슁글 지붕, 위쪽에 파이프 환기구", when: "2026년 4월" },
+        { caption: "슁글 가장자리를 손으로 들어 접착 상태 확인", alt: "갈색 아스팔트 슁글 가장자리를 손으로 들어 올려 접착띠가 떨어진 것을 보여주는 모습", when: "2026년 4월" },
+        { caption: "입자가 떨어져 나간 마모된 슁글", alt: "군데군데 마모되고 입자가 떨어져 나간 회색 아스팔트 슁글 클로즈업", when: "2026년 3월" },
+        { caption: "상태가 양호한 지붕의 환기구와 벽 후레싱 점검", alt: "베이지색 사이딩 벽 옆에 낮은 환기구가 있는 회색 아스팔트 슁글 지붕", when: "2026년 3월" },
+        { caption: "파이프 환기구 칼라와 철망 점검", alt: "베이지색 아스팔트 슁글 지붕 위 철망이 달린 갈색 금속 파이프 환기구 칼라", when: "2026년 4월" },
+        { caption: "용마루를 따라 손상된 구간 교체 중", alt: "수리 중 환기구 옆 갈색 슁글 지붕 위에 놓인 교체용 슁글 띠와 실리콘 건", when: "2026년 4월" },
+      ],
+    },
+    testimonials: { title: "고객들이 남긴 이야기", description: "North Richland Hills와 인근 도시 주택 소유주들의 후기입니다.", reviews: [
       "우박 폭풍 이후 Praise Worthy가 지붕 교체를 도와줬는데, 처음부터 끝까지 정말 전문적이고 편하게 진행됐습니다.",
       "지붕이 손상됐는지 확신이 없었는데, 꼼꼼하게 점검해 주셔서 아래에서는 보이지 않던 문제까지 확인할 수 있었습니다.",
       "초기 점검부터 마지막 확인까지 소통이 정말 좋았고, 보험 조정인과의 현장 대응도 매끄러웠습니다.",
@@ -693,8 +756,8 @@ export const translations = {
       "지난 봄 큰 폭풍 뒤에 바로 대응해 줬고 일정도 빨랐습니다. 팀도 매우 프로페셔널했습니다.",
       "사진이 포함된 상세 보고서를 받아서 이해가 쉬웠고, 전혀 압박 없이 설명해 줘서 가장 안심되는 경험이었습니다.",
     ] },
-    serviceArea: { badge: "DFW 메트로플렉스", title: "DFW 전역 주택 소유주를 위한 서비스", description: "Dallas-Fort Worth 전역에서 무료 지붕 점검과 고품질 지붕 서비스를 제공합니다.", mapDescription: "왼쪽 지역 카드는 서비스 가능 지역을 보여주고, 지도는 Praise Worthy의 실제 Google 비즈니스 프로필을 보여줍니다.", mapCta: "Google Maps에서 Praise Worthy 보기" },
-    faq: { titleLine1: "지붕 점검 전", titleLine2: "자주 묻는 질문", description: "무료 점검 예약 전에 가장 많이 물어보시는 내용을 먼저 정리해 두었습니다.", items: [
+    serviceArea: { badge: "DFW 메트로플렉스", title: "DFW 전역 주택 소유주를 위한 서비스", description: "Dallas-Fort Worth 전역 주택 소유주를 위한 무료 지붕 점검과 지붕 공사입니다.", mapDescription: "왼쪽 지역 카드는 서비스 가능 지역을 보여주고, 지도는 Praise Worthy의 실제 Google 비즈니스 프로필을 보여줍니다.", mapCta: "Google Maps에서 Praise Worthy 보기" },
+    faq: { titleLine1: "지붕 점검 전", titleLine2: "자주 묻는 질문", description: "점검 전에 가장 많이 받는 질문에 간단히 답해 드립니다.", items: [
       ["지붕 점검은 얼마나 걸리나요?", "대부분 30-45분 정도 소요됩니다. 손상 사진과 함께 자세한 점검 결과를 안내해 드립니다."],
       ["정말 무료인가요?", "네. 초기 점검은 완전히 무료이며 별도의 의무도 없습니다. 먼저 지붕 상태를 정확히 아는 것이 중요하다고 생각합니다."],
       ["폭풍 피해가 있는지 어떻게 알 수 있나요?", "우박이나 강풍 피해는 아래에서 바로 보이지 않을 수 있습니다. 홈통의 움푹 들어간 흔적, 슁글 입자 손실, 균열, 들뜸 등을 함께 확인해야 합니다."],

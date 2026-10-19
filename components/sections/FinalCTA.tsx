@@ -69,8 +69,8 @@ export default function FinalCTA() {
             <figure className="cta-media relative mt-8 overflow-hidden rounded-[18px] border border-white/10 shadow-[0_18px_50px_-18px_rgba(0,0,0,0.45)]">
               <div className="relative h-60">
                 <Image
-                  src={withBasePath("/images/brand/cta-yard-sign.webp")}
-                  alt={t.images.signAlt}
+                  src={withBasePath("/images/real/cta-shingle-closeup.webp")}
+                  alt={t.images.ctaAlt}
                   fill
                   sizes="(min-width: 1024px) 55vw, 100vw"
                   className="object-cover object-center"

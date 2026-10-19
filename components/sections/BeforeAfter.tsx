@@ -1,165 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useRef, useState } from "react";
-import { projectLocations } from "@/lib/i18n";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { withBasePath } from "@/lib/seo";
 
-function BeforeAfterSlider({
-  beforeImg,
-  afterImg,
-  beforePosition = "center",
-  afterPosition = "center",
-  location,
-  beforeLabel,
-  afterLabel,
-}: {
-  beforeImg: string;
-  afterImg: string;
-  beforePosition?: string;
-  afterPosition?: string;
-  location: string;
-  beforeLabel: string;
-  afterLabel: string;
-}) {
-  const [position, setPosition] = useState(50);
-  const [touched, setTouched] = useState(false);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const dragging = useRef(false);
-
-  const setPositionFromClientX = useCallback((clientX: number) => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    const rect = slider.getBoundingClientRect();
-    const nextPosition = ((clientX - rect.left) / rect.width) * 100;
-    setPosition(Math.min(100, Math.max(0, nextPosition)));
-  }, []);
-
-  const stopDragging = useCallback(() => {
-    dragging.current = false;
-  }, []);
-
-  return (
-    <figure>
-      <div
-        ref={sliderRef}
-        className="relative aspect-[4/3] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[18px] bg-brand-navy shadow-[0_24px_55px_-20px_rgba(0,0,0,0.8)]"
-        onPointerDown={(event) => {
-          if (event.button !== 0) return;
-          dragging.current = true;
-          setTouched(true);
-          event.currentTarget.setPointerCapture(event.pointerId);
-          setPositionFromClientX(event.clientX);
-        }}
-        onPointerMove={(event) => {
-          if (dragging.current) setPositionFromClientX(event.clientX);
-        }}
-        onPointerUp={stopDragging}
-        onPointerCancel={stopDragging}
-        onLostPointerCapture={stopDragging}
-      >
-        <Image
-          src={afterImg}
-          alt={`${afterLabel}: ${location}, TX`}
-          fill
-          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 80vw, 100vw"
-          className="pointer-events-none object-cover"
-          style={{ objectPosition: afterPosition }}
-        />
-        <div
-          className="absolute inset-0 overflow-hidden"
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-        >
-          <Image
-            src={beforeImg}
-            alt={`${beforeLabel}: ${location}, TX`}
-            fill
-            sizes="(min-width: 1024px) 31vw, (min-width: 640px) 80vw, 100vw"
-            className="pointer-events-none object-cover"
-            style={{ objectPosition: beforePosition }}
-          />
-        </div>
-
-        <div
-          className="pointer-events-none absolute inset-y-0 z-10 w-0.5 bg-brand-amber shadow-[0_0_12px_rgba(0,0,0,0.55)]"
-          style={{ left: `${position}%`, transform: "translateX(-50%)" }}
-          aria-hidden="true"
-        />
-        <button
-          type="button"
-          role="slider"
-          aria-label={`${beforeLabel} / ${afterLabel}: ${location}, TX`}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={Math.round(position)}
-          aria-valuetext={`${beforeLabel} ${Math.round(position)}%, ${afterLabel} ${Math.round(100 - position)}%`}
-          aria-orientation="horizontal"
-          className="absolute top-1/2 z-20 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize touch-none place-items-center rounded-full bg-gradient-to-br from-brand-amber to-brand-orange text-[#081810] shadow-[0_8px_20px_rgba(0,0,0,0.5)] outline-none focus-visible:ring-4 focus-visible:ring-white/95 focus-visible:ring-offset-2 focus-visible:ring-offset-[#081810]"
-          style={{ left: `${position}%` }}
-          onPointerDown={(event) => event.currentTarget.parentElement?.setPointerCapture(event.pointerId)}
-          onKeyDown={(event) => {
-            let nextPosition = position;
-            if (event.key === "ArrowLeft" || event.key === "ArrowDown") nextPosition -= 5;
-            else if (event.key === "ArrowRight" || event.key === "ArrowUp") nextPosition += 5;
-            else if (event.key === "Home") nextPosition = 0;
-            else if (event.key === "End") nextPosition = 100;
-            else return;
-            event.preventDefault();
-            setTouched(true);
-            setPosition(Math.min(100, Math.max(0, nextPosition)));
-          }}
-        >
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="m9 18-6-6 6-6" />
-            <path d="m15 6 6 6-6 6" />
-          </svg>
-        </button>
-
-        {!touched && (
-          <span className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full border border-brand-amber/55 bg-[#081810]/80 px-3 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.1em] text-brand-amber backdrop-blur-sm">
-            {beforeLabel} ↔ {afterLabel}
-          </span>
-        )}
-        <span className="pointer-events-none absolute left-3.5 top-3.5 z-20 rounded-full bg-[#081810]/75 px-3 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-white">
-          {beforeLabel}
-        </span>
-        <span className="pointer-events-none absolute right-3.5 top-3.5 z-20 rounded-full bg-gradient-to-br from-brand-amber to-brand-orange px-3 py-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[#081810]">
-          {afterLabel}
-        </span>
-      </div>
-      <figcaption className="mt-4 text-center text-sm font-bold text-brand-surface/85">
-        {location}, TX
-      </figcaption>
-    </figure>
-  );
-}
+// Real job-site photos taken by the Praise Worthy team. Every file traces back to an
+// owner-supplied iPhone photo or video frame; see public/images/real/README.md.
+const PROJECT_PHOTOS = [
+  { src: "/images/real/gallery-missing-shingles-ridge.webp", place: "Carrollton, TX" },
+  { src: "/images/real/gallery-seal-check.webp", place: "Carrollton, TX" },
+  { src: "/images/real/gallery-granule-loss.webp", place: "Carrollton, TX" },
+  { src: "/images/real/gallery-vent-intact-roof.webp", place: "Collin County, TX" },
+  { src: "/images/real/gallery-vent-cap.webp", place: "Carrollton, TX" },
+  { src: "/images/real/gallery-repair-in-progress.webp", place: "Carrollton, TX" },
+] as const;
 
 export default function BeforeAfter() {
   const { t } = useLanguage();
-  const projects = [
-    {
-      location: projectLocations[0],
-      beforeImg: "/images/before-after/chimney-before.webp",
-      afterImg: "/images/before-after/chimney-after.webp",
-      beforePosition: "center center",
-      afterPosition: "center center",
-    },
-    {
-      location: projectLocations[1],
-      beforeImg: "/images/before-after/front-house-before.webp",
-      afterImg: "/images/before-after/front-house-after.webp",
-      beforePosition: "center 42%",
-      afterPosition: "center 42%",
-    },
-    {
-      location: projectLocations[2],
-      beforeImg: "/images/before-after/aerial-before.webp",
-      afterImg: "/images/before-after/aerial-after.webp",
-      beforePosition: "center center",
-      afterPosition: "center center",
-    },
-  ];
+  const photos = PROJECT_PHOTOS.map((photo, index) => ({
+    ...photo,
+    ...t.beforeAfter.photos[index],
+  }));
 
   return (
     <section id="projects" className="relative overflow-hidden bg-[#07150e] py-20 text-white md:py-28 lg:py-32">
@@ -178,20 +39,30 @@ export default function BeforeAfter() {
           </p>
         </div>
 
-        <div className="grid gap-7 lg:grid-cols-3">
-          {projects.map((project) => (
-            <BeforeAfterSlider
-              key={project.location}
-              beforeImg={withBasePath(project.beforeImg)}
-              afterImg={withBasePath(project.afterImg)}
-              beforePosition={project.beforePosition}
-              afterPosition={project.afterPosition}
-              location={project.location}
-              beforeLabel={t.beforeAfter.before}
-              afterLabel={t.beforeAfter.after}
-            />
+        <ul className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3" aria-label={t.beforeAfter.title}>
+          {photos.map((photo) => (
+            <li key={photo.src}>
+              <figure>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-brand-navy shadow-[0_24px_55px_-20px_rgba(0,0,0,0.8)]">
+                  <Image
+                    src={withBasePath(photo.src)}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                  <span className="pointer-events-none absolute inset-3 rounded-[12px] border border-brand-amber/35" aria-hidden="true" />
+                </div>
+                <figcaption className="mt-4">
+                  <p className="text-sm font-bold text-brand-surface/92">{photo.caption}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-brand-amber/85">
+                    {photo.place} · {photo.when}
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

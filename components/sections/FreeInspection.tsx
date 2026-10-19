@@ -67,8 +67,8 @@ export default function FreeInspection() {
 
           <figure className="relative min-h-[360px] overflow-hidden rounded-[20px] shadow-[0_30px_70px_-24px_rgba(0,0,0,0.65)] sm:min-h-[470px]">
             <Image
-              src={withBasePath("/images/brand/service-truck.webp")}
-              alt={t.images.truckAlt}
+              src={withBasePath("/images/real/inspection-lifted-shingle.webp")}
+              alt={t.images.inspectionAlt}
               fill
               sizes="(min-width: 1024px) 46vw, 100vw"
               className="object-cover object-center"

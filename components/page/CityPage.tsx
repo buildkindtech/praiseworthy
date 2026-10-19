@@ -107,8 +107,8 @@ export default function CityPage({ page }: { page: CityPageType }) {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src={withBasePath("/images/brand/hero-truck-home.webp")}
-              alt={`${BUSINESS_NAME} roofing inspection truck serving ${page.city} homeowners`}
+              src={withBasePath("/images/real/hero-roof-inspection.webp")}
+              alt="Wind-damaged shingles and exposed underlayment on a North Texas roof, photographed during a Praise Worthy inspection"
               fill
               priority
               sizes="100vw"
